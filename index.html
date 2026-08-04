@@ -1406,6 +1406,12 @@ function toggleMobileNav(){
   document.querySelector('.nav-links').classList.toggle('open');
   document.querySelector('.nav-hamburger').classList.toggle('open');
 }
+document.querySelectorAll('.nav-links button').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    document.querySelector('.nav-links').classList.remove('open');
+    document.querySelector('.nav-hamburger').classList.remove('open');
+  });
+});
 document.addEventListener('click',function(e){
   const nav=document.querySelector('.nav-links');
   const btn=document.querySelector('.nav-hamburger');
