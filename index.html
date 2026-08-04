@@ -486,6 +486,7 @@ footer em{color:var(--sage-deep)}
 .story-timeline{max-width:880px;margin:3rem auto 0;position:relative;padding:0.5rem 0 0}
 .story-timeline::before{content:'';position:absolute;left:50%;top:0.4rem;bottom:0.4rem;width:1px;transform:translateX(-50%);background:linear-gradient(to bottom,transparent 0%,rgba(107,114,96,0.32) 4%,rgba(107,114,96,0.32) 96%,transparent 100%)}
 .story-item{width:50%;box-sizing:border-box;padding:0 3.25rem 1.75rem;position:relative}
+@media(min-width:721px){.story-item:not(:first-child){margin-top:-7.5rem}}
 .story-item::before{content:'';position:absolute;top:0.45rem;width:12px;height:12px;border-radius:50%;background:var(--sage-deep);box-shadow:0 0 0 5px #f7f4ee;z-index:2}
 .story-item-left{text-align:right}
 .story-item-left::before{right:-6px}
@@ -694,7 +695,7 @@ footer em{color:var(--sage-deep)}
     <div class="story-item story-item-right fade-in">
       <div class="story-card">
         <div class="story-card-num">06</div>
-        <div class="story-card-year" data-i18n="story.y5">Diciembre 2025 · Charlotte, Carolina del Norte</div>
+        <div class="story-card-year" data-i18n="story.y5">Diciembre 2025 · Charlotte</div>
         <h3 class="story-card-title" data-i18n="story.e5.title">Nuestra ceremonia civil</h3>
         <p class="story-card-body" data-i18n="story.e5.body">Celebramos nuestra ceremonia civil en Charlotte, Carolina del Norte, rodeados de nuestra familia y amigos más cercanos. Fue una celebración chiquita, pero muy especial.</p>
       </div>
@@ -1142,7 +1143,7 @@ es:{
   'story.y3':'Febrero 2022 · Nueva York','story.e3.title':'Nueva York','story.e3.body':'Un mes después, Jimmy viajó a Nueva York para visitar a Dani que se había mudado ahí. Fuimos juntos a un concierto de Simon Grossman y ese fin de semana decidimos empezar a salir oficialmente... en Valentine\'s day. Muy romántico el Jimmy.',
   'story.y4':'Junio 2023 · Charlotte','story.e4.title':'Charlotte','story.e4.body':'Después de un año y medio de relación a distancia entre Nueva York y Charlotte, Dani se mudó a Charlotte. Desde entonces, esta ciudad se convirtió en nuestro hogar. También llegó Dante, nuestro gato negro y el más mimado de la casa.',
   'story.y5.proposal':'Septiembre 2025 · La Paz','story.e5.proposal.title':'Nuestro Compromiso','story.e5.proposal.body':'En un viaje a La Paz, Jimmy organizó un picnic sorpresa en AceroMarka, el lugar favorito de Dani.',
-  'story.y5':'Diciembre 2025 · Charlotte, Carolina del Norte','story.e5.title':'Nuestra ceremonia civil','story.e5.body':'Celebramos nuestra ceremonia civil en Charlotte, Carolina del Norte, rodeados de nuestra familia y amigos más cercanos. Fue una celebración chiquita, pero muy especial.',
+  'story.y5':'Diciembre 2025 · Charlotte','story.e5.title':'Nuestra ceremonia civil','story.e5.body':'Celebramos nuestra ceremonia civil en Charlotte, Carolina del Norte, rodeados de nuestra familia y amigos más cercanos. Fue una celebración chiquita, pero muy especial.',
   'story.y6':'Diciembre 2026 · La Paz','story.e6.title':'¡Nos casamos!','story.e6.body':'Y ahora llegó el momento de celebrar con todos ustedes en La Paz, la ciudad donde los dos nacimos y crecimos.','story.e6.body2':'Lo que más ilusión nos hace de este fin de semana es juntar en un mismo lugar a las personas que han sido parte de nuestras vidas en diferentes etapas: familia, amigos de Bolivia, Notre Dame, Nueva York, Charlotte y muchos otros lugares que nos han acompañado en el camino.','story.e6.body3':'Gracias por acompañarnos en este día. ¡No vemos la hora de celebrar, bailar y compartir este fin de semana con todos ustedes!',
   'story.photo.add':'Añadir foto',
   'rsvp.eyebrow':'por favor confirma tu asistencia antes del 30 de septiembre',
@@ -1235,7 +1236,7 @@ en:{
   'story.y3':'February 2022 · New York','story.e3.title':'New York','story.e3.body':'A month later, Jimmy flew to New York to visit Dani, who had moved there. We went together to a Simon Grossman concert, and that weekend we decided to officially start dating... on Valentine\'s Day. Very romantic, Jimmy.',
   'story.y4':'July 2023 · Charlotte','story.e4.title':'Charlotte','story.e4.body':'After a year and a half of long distance between New York and Charlotte, Dani moved to Charlotte. Ever since, this city has been our home. Dante also joined us — our black cat, and the most spoiled member of the household.',
   'story.y5.proposal':'September 2025 · La Paz','story.e5.proposal.title':'Our Engagement','story.e5.proposal.body':'On a trip to La Paz, Jimmy planned a surprise picnic at Aceromarka, Dani\'s favorite place.',
-  'story.y5':'December 2025 · Charlotte, North Carolina','story.e5.title':'Our civil ceremony','story.e5.body':'We held our civil ceremony in Charlotte, North Carolina, surrounded by our closest family and friends. It was a small celebration, but a truly special one.',
+  'story.y5':'December 2025 · Charlotte','story.e5.title':'Our civil ceremony','story.e5.body':'We held our civil ceremony in Charlotte, North Carolina, surrounded by our closest family and friends. It was a small celebration, but a truly special one.',
   'story.y6':'December 2026 · La Paz','story.e6.title':'We\'re getting married!','story.e6.body':'And now it\'s finally time to celebrate with all of you in La Paz, the city where we were both born and raised.','story.e6.body2':'What excites us most about this weekend is bringing together, in one place, the people who have been part of our lives at different stages: family, friends from Bolivia, Notre Dame, New York, Charlotte, and so many other places that have been part of our journey.','story.e6.body3':'Thank you for being part of this day with us. We can\'t wait to celebrate, dance, and share this weekend with all of you!',
   'story.photo.add':'Add photo',
   'rsvp.eyebrow':'kindly reply by September 30th',
