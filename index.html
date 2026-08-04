@@ -211,15 +211,23 @@ nav{position:sticky;top:0;z-index:100;background:rgba(250,249,246,0.97);backdrop
 .getaway-hotel a:hover{border-bottom-color:var(--sage-deep)}
 
 /* ── FAQ ─────────────────────────────────────────── */
-.faq-item{border-bottom:0.5px solid var(--border)}
-.faq-item:first-child{border-top:0.5px solid var(--border)}
-.faq-q{width:100%;text-align:left;background:none;border:none;padding:1.4rem 0;font-family:var(--display);font-size:18px;font-weight:400;color:var(--dark);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;line-height:1.3;transition:color 0.2s}
-.faq-q:hover{color:var(--sage-deep)}
-.faq-q .chevron{font-family:var(--sans);font-size:12px;color:var(--sage-light);transition:transform 0.25s;flex-shrink:0;font-style:normal}
-.faq-q.open .chevron{transform:rotate(180deg)}
-.faq-q.open{color:var(--sage-deep)}
-.faq-a{display:none;padding:0 0 1.4rem;font-size:16px;color:var(--mid);line-height:1.85}
-.faq-a.open{display:block}
+#faq-container{display:grid;grid-template-columns:0.9fr 1.3fr;background:rgba(255,255,255,0.75);border:1px solid rgba(107,114,96,0.16);border-radius:10px;box-shadow:0 20px 46px -30px rgba(42,36,32,0.3);overflow:hidden;min-height:340px}
+.faq-nav{border-right:1px solid rgba(107,114,96,0.16);display:flex;flex-direction:column;padding:0.5rem 0}
+.faq-nav-item{width:100%;text-align:left;background:none;border:none;border-left:3px solid transparent;padding:1rem 1.5rem;font-family:var(--display);font-size:16px;line-height:1.4;color:var(--mid);cursor:pointer;transition:background 0.2s,color 0.2s,border-color 0.2s}
+.faq-nav-item:hover{color:var(--dark)}
+.faq-nav-item.active{background:var(--sage-pale);border-left-color:var(--sage-deep);color:var(--sage-deep);font-weight:500}
+.faq-panel{padding:2.75rem}
+.faq-panel-eyebrow{font-family:var(--sc);font-size:12px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage-deep);margin-bottom:0.85rem}
+.faq-panel-q{font-family:var(--display);font-size:26px;font-weight:400;color:var(--dark);margin-bottom:1.1rem;line-height:1.25}
+.faq-panel-a{font-size:16px;color:var(--mid);line-height:1.85}
+@media(max-width:720px){
+  #faq-container{grid-template-columns:1fr;min-height:0}
+  .faq-nav{flex-direction:row;overflow-x:auto;border-right:none;border-bottom:1px solid rgba(107,114,96,0.16);padding:0;-webkit-overflow-scrolling:touch}
+  .faq-nav-item{white-space:nowrap;border-left:none;border-bottom:3px solid transparent;padding:1rem 1.1rem;font-size:14px}
+  .faq-nav-item.active{border-left-color:transparent;border-bottom-color:var(--sage-deep)}
+  .faq-panel{padding:1.75rem}
+  .faq-panel-q{font-size:21px}
+}
 
 /* ── STORY ───────────────────────────────────────── */
 .story-timeline{max-width:640px;margin:0 auto;padding:2rem 2rem 4rem}
@@ -884,23 +892,24 @@ footer em{color:var(--sage-deep)}
   <div class="section">
     <h2 class="section-title fade-in"><em data-i18n="faq.title">Preguntas</em></h2>
     <div class="section-rule"></div>
-    <p class="fade-in" style="font-family:var(--display);font-size:17px;font-weight:400;color:var(--mid);line-height:1.8;margin-bottom:2rem" data-i18n="faq.intro">Todo lo que necesitas saber para nuestro día especial</p>
+    <p class="fade-in" style="font-family:var(--display);font-size:17px;font-weight:400;color:var(--mid);line-height:1.8;margin-bottom:2.5rem" data-i18n="faq.intro">Todo lo que necesitas saber para nuestro día especial</p>
 
-    <div class="fade-in" style="background:rgba(255,255,255,0.6);border-radius:10px;box-shadow:0 24px 60px -34px rgba(42,36,32,0.3);padding:2.5rem 2.5rem 0.5rem">
-      <div id="faq-container" style="margin-bottom:0.5rem"></div>
+    <div id="faq-container" class="fade-in"></div>
 
-      <div style="margin-top:1.5rem;padding-top:2rem;border-top:0.5px solid var(--border-soft)">
-        <p style="font-family:var(--display);font-size:17px;font-weight:400;color:var(--mid);line-height:1.8;margin-bottom:2rem" data-i18n="faq.contact.body">Estamos aca para lo que necesiten, nos pueden escribir directamente por Whatsapp.</p>
-        <div style="display:flex;flex-direction:column;gap:1.25rem;max-width:none">
-          <div style="display:flex;justify-content:space-between;align-items:baseline;padding:0.85rem 0;border-bottom:0.5px solid var(--border-soft)">
-            <div><span style="font-family:var(--display);font-size:18px;color:var(--dark)">Dani</span><span style="font-family:var(--sans);font-size:12px;color:var(--muted);display:block;margin-top:2px">+1 574 340 0755</span></div>
-            <a href="https://wa.me/15743400755" target="_blank" style="font-family:var(--sans);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--sage-deep);border-bottom:0.5px solid rgba(107,114,96,0.35);text-decoration:none;padding-bottom:1px">WhatsApp →</a>
-          </div>
-          <div style="display:flex;justify-content:space-between;align-items:baseline;padding:0.85rem 0 2rem">
-            <div><span style="font-family:var(--display);font-size:18px;color:var(--dark)">Jimmy</span><span style="font-family:var(--sans);font-size:12px;color:var(--muted);display:block;margin-top:2px">+1 863 640 9879</span></div>
-            <a href="https://wa.me/18636409879" target="_blank" style="font-family:var(--sans);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--sage-deep);border-bottom:0.5px solid rgba(107,114,96,0.35);text-decoration:none;padding-bottom:1px">WhatsApp →</a>
-          </div>
-        </div>
+    <h3 class="section-sub fade-in" data-i18n="faq.contact.title">¿Tienes más preguntas?</h3>
+    <p class="fade-in" style="font-family:var(--display);font-size:16px;color:var(--mid);line-height:1.8;margin-bottom:1.75rem" data-i18n="faq.contact.body">Estamos aca para lo que necesiten, nos pueden escribir directamente por Whatsapp.</p>
+    <div class="fade-in" style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem">
+      <div style="background:rgba(255,255,255,0.7);border:1px solid rgba(107,114,96,0.16);border-radius:8px;box-shadow:0 14px 32px -26px rgba(42,36,32,0.28);padding:1.75rem;text-align:center">
+        <div style="width:52px;height:52px;border-radius:50%;background:var(--sage-pale);color:var(--sage-deep);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:20px;margin:0 auto 0.85rem">D</div>
+        <div style="font-family:var(--display);font-size:19px;color:var(--dark)">Dani</div>
+        <div style="font-family:var(--sans);font-size:12px;color:var(--muted);margin-top:3px">+1 574 340 0755</div>
+        <a href="https://wa.me/15743400755" target="_blank" style="display:inline-block;margin-top:1.1rem;font-family:var(--sans);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--sage-deep);border-bottom:0.5px solid rgba(107,114,96,0.35);text-decoration:none;padding-bottom:1px">WhatsApp →</a>
+      </div>
+      <div style="background:rgba(255,255,255,0.7);border:1px solid rgba(169,116,90,0.18);border-radius:8px;box-shadow:0 14px 32px -26px rgba(42,36,32,0.28);padding:1.75rem;text-align:center">
+        <div style="width:52px;height:52px;border-radius:50%;background:rgba(169,116,90,0.12);color:var(--clay);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:20px;margin:0 auto 0.85rem">J</div>
+        <div style="font-family:var(--display);font-size:19px;color:var(--dark)">Jimmy</div>
+        <div style="font-family:var(--sans);font-size:12px;color:var(--muted);margin-top:3px">+1 863 640 9879</div>
+        <a href="https://wa.me/18636409879" target="_blank" style="display:inline-block;margin-top:1.1rem;font-family:var(--sans);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--clay);border-bottom:0.5px solid rgba(169,116,90,0.35);text-decoration:none;padding-bottom:1px">WhatsApp →</a>
       </div>
     </div>
 
@@ -1098,7 +1107,7 @@ es:{
   'away.titicaca.tiwanaku':'El Lago Titicaca es el lago navegable más alto del mundo (3,812 m.s.n.m.) y el más grande de Sudamérica, compartido entre Perú y Bolivia. La Isla del Sol es la isla más grande del lago y es considerada el lugar de origen sagrado del Imperio Inca.',
   'away.coroico':'El Camino de los Yungas, más conocido como el famoso "Camino de la Muerte", es una antigua (y muy estrecha) vía de tierra que une las montañas de los Andes con la selva amazónica. Si te gusta la aventura, les recomendamos hacer el descenso en bicicleta, una de las atracciones más extremas y populares de Bolivia.',
   'link.book.tour':'Reservar tour →',
-  'faq.title':'Preguntas','faq.intro':'Todo lo que necesitas saber para nuestro día especial','faq.contact.body':'Estamos aca para lo que necesiten, nos pueden escribir directamente por Whatsapp.',
+  'faq.title':'Preguntas','faq.intro':'Todo lo que necesitas saber para nuestro día especial','faq.panel.eyebrow':'Pregunta frecuente','faq.contact.title':'¿Tienes más preguntas?','faq.contact.body':'Estamos aca para lo que necesiten, nos pueden escribir directamente por Whatsapp.',
   'story.eyebrow':'Dani & Jimmy','story.main.title':'Nuestra Historia',
   'story.intro':'Una historia que comenzó en un bote en Miami, pasó por las calles de Nueva York y llegó hasta las montañas de Bolivia. Esta es la nuestra.',
   'story.y1':'Julio 2020 · Miami','story.e1.title':'La primera vez que nos conocimos','story.e1.body':'Nos conocimos oficialmente por primera vez en Miami durante el fin de semana del 4 de Julio en un boat party.',
@@ -1191,7 +1200,7 @@ en:{
   'away.titicaca.tiwanaku':'Lake Titicaca is the highest navigable lake in the world (3,812 m.a.s.l.) and the largest in South America, shared between Peru and Bolivia. Isla del Sol, located on the Bolivian side, is the largest island in the lake and is considered the sacred birthplace of the Inca Empire.',
   'away.coroico':'The Yungas Road, better known as the famous "Death Road," is an old (and very narrow) dirt path that connects the Andes mountains with the Amazon rainforest. If you like adventure, we recommend doing the bicycle descent, one of the most extreme and popular attractions in Bolivia.',
   'link.book.tour':'Book tour →',
-  'faq.title':'Questions','faq.intro':'Everything you need to know for our special day','faq.contact.body':'We are here for whatever you need — feel free to reach out to us directly on WhatsApp.',
+  'faq.title':'Questions','faq.intro':'Everything you need to know for our special day','faq.panel.eyebrow':'Frequently asked','faq.contact.title':'Still have questions?','faq.contact.body':'We are here for whatever you need — feel free to reach out to us directly on WhatsApp.',
   'story.eyebrow':'Dani & Jimmy','story.main.title':'Our Story',
   'story.intro':'A story that started on a boat in Miami, wound through the streets of New York, and found its way back to the mountains of Bolivia. This is ours.',
   'story.y1':'July 2020 · Miami','story.e1.title':'The first time we met','story.e1.body':'We officially met for the first time in Miami over the Fourth of July weekend, at a boat party.',
@@ -1370,12 +1379,22 @@ function switchTodoTab(panel,btn){
   btn.classList.add('active');
 }
 
+let faqActiveIndex=0;
 function buildFAQ(){
   const container=document.getElementById('faq-container');
   const items=faqs[currentLang]||faqs.es;
-  container.innerHTML=items.map((item,i)=>`<div class="faq-item"><button class="faq-q" onclick="toggleFAQ(${i},this)">${item.q}<span class="chevron">▾</span></button><div class="faq-a" id="faq-a-${i}">${item.a}</div></div>`).join('');
+  if(faqActiveIndex>=items.length) faqActiveIndex=0;
+  const nav=items.map((item,i)=>`<button class="faq-nav-item${i===faqActiveIndex?' active':''}" onclick="showFAQAnswer(${i},this)">${item.q}</button>`).join('');
+  container.innerHTML=`<div class="faq-nav">${nav}</div><div class="faq-panel"><div class="faq-panel-eyebrow">${t('faq.panel.eyebrow')}</div><div class="faq-panel-q">${items[faqActiveIndex].q}</div><div class="faq-panel-a">${items[faqActiveIndex].a}</div></div>`;
 }
-function toggleFAQ(i,btn){const a=document.getElementById('faq-a-'+i);const o=a.classList.toggle('open');btn.classList.toggle('open',o);}
+function showFAQAnswer(i,btn){
+  faqActiveIndex=i;
+  const items=faqs[currentLang]||faqs.es;
+  document.querySelectorAll('.faq-nav-item').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelector('.faq-panel-q').textContent=items[i].q;
+  document.querySelector('.faq-panel-a').textContent=items[i].a;
+}
 
 function loadInvitePhoto(input){
   const file=input.files[0];if(!file)return;
