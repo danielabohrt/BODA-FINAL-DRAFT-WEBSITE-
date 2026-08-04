@@ -93,6 +93,26 @@ nav{position:sticky;top:0;z-index:100;background:rgba(250,249,246,0.97);backdrop
 .reg-link{font-family:var(--sans);font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--sage-deep);border-bottom:0.5px solid rgba(107,114,96,0.35);text-decoration:none;padding-bottom:2px;background:none;border-top:none;border-left:none;border-right:none;cursor:pointer;transition:border-color 0.2s}
 .reg-link:hover{border-bottom-color:var(--sage-deep)}
 
+/* ── GIFT TICKET ─────────────────────────────────── */
+.gift-ticket{display:flex;background:rgba(255,255,255,0.85);border-radius:12px;box-shadow:0 26px 60px -32px rgba(42,36,32,0.32);overflow:visible;position:relative}
+.gift-ticket-main{flex:1;padding:2.5rem 2.75rem}
+.gift-ticket-row{display:flex;align-items:baseline;justify-content:space-between;padding:1.25rem 0;border-bottom:0.5px solid rgba(107,114,96,0.18)}
+.gift-ticket-row:last-child{border-bottom:none}
+.gift-ticket-perf{width:0;position:relative;flex-shrink:0;border-left:2px dashed rgba(107,114,96,0.3)}
+.gift-ticket-perf::before,.gift-ticket-perf::after{content:'';position:absolute;left:-14px;width:28px;height:28px;border-radius:50%;background:var(--sand);box-shadow:inset 0 0 0 1px rgba(107,114,96,0.16)}
+.gift-ticket-perf::before{top:-14px}
+.gift-ticket-perf::after{bottom:-14px}
+.gift-ticket-stub{width:230px;flex-shrink:0;background:var(--sage-pale);border-radius:0 12px 12px 0;padding:2.25rem 1.75rem;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:0.9rem}
+@media(max-width:640px){
+  .gift-ticket{flex-direction:column;border-radius:10px}
+  .gift-ticket-main{padding:2rem}
+  .gift-ticket-perf{width:auto;height:0;border-left:none;border-top:2px dashed rgba(107,114,96,0.3);margin:0 2rem}
+  .gift-ticket-perf::before,.gift-ticket-perf::after{top:-14px;left:auto}
+  .gift-ticket-perf::before{left:-14px}
+  .gift-ticket-perf::after{right:-14px;left:auto}
+  .gift-ticket-stub{width:auto;border-radius:0 0 10px 10px;padding:2rem}
+}
+
 /* ── SCHEDULE ────────────────────────────────────── */
 .sched-timeline{max-width:700px;margin:0 auto;padding:1.5rem 2rem 5rem;position:relative}
 .sched-timeline::before{display:none}
@@ -537,7 +557,7 @@ footer em{color:var(--sage-deep)}
   </div>
 
   <!-- Schedule section (merged) -->
-  <div style="background:linear-gradient(180deg,rgba(255,255,255,0) 0px,rgba(255,255,255,0.75) 160px,rgba(255,255,255,0.75) 100%);padding:2rem 0 4rem;margin-top:0">
+  <div style="background:linear-gradient(180deg,rgba(255,255,255,0) 0px,rgba(255,255,255,1) 220px,rgba(255,255,255,1) 100%);padding:2rem 0 4rem;margin-top:0">
   <div class="section" style="padding-bottom:0;text-align:center">
     <p class="eyebrow fade-in" data-i18n="sched.eyebrow">Sábado, 19 de Diciembre de 2026</p>
     <h2 class="section-title fade-in" style="transition-delay:0.08s"><em data-i18n="sched.program.title">Programación</em></h2>
@@ -650,7 +670,7 @@ footer em{color:var(--sage-deep)}
       <div class="story-chapter-dot"><div class="story-chapter-dot-inner"></div></div>
       <div class="story-chapter-content">
         <div class="story-chapter-year" data-i18n="story.y5.proposal">Septiembre 2025 · La Paz</div>
-        <h3 class="story-chapter-title" data-i18n="story.e5.proposal.title">La propuesta</h3>
+        <h3 class="story-chapter-title" data-i18n="story.e5.proposal.title">Nuestro Compromiso</h3>
         <p class="story-chapter-body" data-i18n="story.e5.proposal.body">En un viaje a La Paz, Jimmy organizó un picnic sorpresa en AceroMarka, el lugar favorito de Dani.</p>
       </div>
     </div>
@@ -789,11 +809,6 @@ footer em{color:var(--sage-deep)}
           <h4><a href="https://www.gravitybolivia.com/custom-trips/destination/la-paz/" target="_blank" class="rest-name-link" data-i18n="todo.huayna.title">Huayna Potosí (6.088 m)</a></h4>
           <p data-i18n="todo.huayna.body">Uno de los seismiles más accesibles del mundo. A solo una hora de La Paz, ideal para principiantes con guía certificado.</p>
         </div>
-        <div class="todo-card">
-
-          <h4><a href="https://www.gravitybolivia.com/custom-trips/destination/la-paz/" target="_blank" class="rest-name-link" data-i18n="todo.austria.title">Pico Austria (5.350 m)</a></h4>
-          <p data-i18n="todo.austria.body">Trekking de un día desde La Paz con vistas a la Cordillera Real y el lago Condoriri. Perfecto para aclimatarse.</p>
-        </div>
       </div>
 
       <div style="margin-top:1.5rem;padding:2rem 2rem;background:rgba(107,114,96,0.1);border-top:2px solid var(--sage-deep);text-align:center">
@@ -923,31 +938,29 @@ footer em{color:var(--sage-deep)}
     <div class="section-rule"></div>
     <p class="fade-in" style="font-family:var(--display);font-size:17px;font-weight:400;color:var(--mid);line-height:1.8;margin-bottom:2.5rem" data-i18n="home.reg.intro">Tu presencia en nuestra boda es el mayor regalo. Para quienes deseen celebrarnos, aquí encontrarás algunas opciones.</p>
 
-    <div style="background:var(--sage-pale);border:1px solid rgba(107,114,96,0.22);border-radius:8px;padding:0.5rem 2rem;box-shadow:0 14px 32px -24px rgba(42,36,32,0.28);max-width:none">
-      <!-- Zelle -->
-      <div style="display:flex;align-items:baseline;justify-content:space-between;padding:1.25rem 0;border-bottom:0.5px solid rgba(107,114,96,0.2)">
-        <div>
-          <span style="font-family:var(--display);font-size:20px;color:var(--dark)">Zelle</span>
-          <span style="font-family:var(--sans);font-size:12px;color:var(--muted);display:block;margin-top:3px" data-i18n="reg.zelle.info">dbohrta@gmail.com · 5743400755</span>
+    <div class="gift-ticket fade-in">
+      <div class="gift-ticket-main">
+        <div class="gift-ticket-row">
+          <div>
+            <span style="font-family:var(--display);font-size:20px;color:var(--dark)">Zelle</span>
+            <span style="font-family:var(--sans);font-size:12px;color:var(--muted);display:block;margin-top:3px" data-i18n="reg.zelle.info">dbohrta@gmail.com · 5743400755</span>
+          </div>
+          <button class="reg-link" style="flex-shrink:0;margin-left:1.5rem" onclick="copyText(document.getElementById('zelle-reg').textContent,this)" data-i18n="reg.copy">Copiar</button>
+          <span id="zelle-reg" style="display:none" data-i18n="reg.zelle.info">dbohrta@gmail.com · 5743400755</span>
         </div>
-        <button class="reg-link" style="flex-shrink:0;margin-left:1.5rem" onclick="copyText(document.getElementById('zelle-reg').textContent,this)" data-i18n="reg.copy">Copiar</button>
-        <span id="zelle-reg" style="display:none" data-i18n="reg.zelle.info">dbohrta@gmail.com · 5743400755</span>
-      </div>
-
-      <!-- QR Digital / Bolivia account -->
-      <div style="display:flex;align-items:baseline;justify-content:space-between;padding:1.25rem 0;border-bottom:0.5px solid rgba(107,114,96,0.2)">
-        <div>
-          <span style="font-family:var(--display);font-size:20px;color:var(--dark)" data-i18n="reg.qr.title">QR Digital</span>
-          <span style="font-family:var(--sans);font-size:12px;color:var(--muted);display:block;margin-top:3px">201-52334139-3-48 · BCP</span>
+        <div class="gift-ticket-row">
+          <div>
+            <span style="font-family:var(--display);font-size:20px;color:var(--dark)" data-i18n="reg.qr.title">QR Digital</span>
+            <span style="font-family:var(--sans);font-size:12px;color:var(--muted);display:block;margin-top:3px">201-52334139-3-48 · BCP</span>
+          </div>
+          <button class="reg-link" style="flex-shrink:0;margin-left:1.5rem" onclick="copyText('201-52334139-3-48',this)" data-i18n="reg.copy">Copiar</button>
         </div>
-        <button class="reg-link" style="flex-shrink:0;margin-left:1.5rem" onclick="copyText('201-52334139-3-48',this)" data-i18n="reg.copy">Copiar</button>
       </div>
-
-      <!-- QR Code image, framed like a keepsake -->
-      <div style="padding:1.75rem 0;display:flex;flex-direction:column;align-items:flex-start;gap:0.85rem">
-        <span style="font-family:var(--sc);font-size:12px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted)" data-i18n="reg.qr.scan">Escanea para transferir</span>
-        <div style="background:#fff;padding:10px;border:1px solid rgba(107,114,96,0.25);border-radius:6px;box-shadow:0 10px 24px -20px rgba(42,36,32,0.3)">
-          <img src="https://i.postimg.cc/tZX4hFdt/IMG-4925-2.jpg" alt="Código QR para transferencia bancaria" loading="lazy" style="width:180px;height:auto;display:block;border-radius:2px"/>
+      <div class="gift-ticket-perf"></div>
+      <div class="gift-ticket-stub">
+        <span style="font-family:var(--sc);font-size:11px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--sage-deep)" data-i18n="reg.qr.scan">Escanea para transferir</span>
+        <div style="background:#fff;padding:8px;border-radius:6px;box-shadow:0 10px 24px -20px rgba(42,36,32,0.3)">
+          <img src="https://i.postimg.cc/tZX4hFdt/IMG-4925-2.jpg" alt="Código QR para transferencia bancaria" loading="lazy" style="width:150px;height:auto;display:block;border-radius:2px"/>
         </div>
       </div>
     </div>
@@ -1114,7 +1127,7 @@ es:{
   'story.y2':'Enero 2022 · La Paz','story.e2.title':'Nos volvimos a encontrar','story.e2.body':'Un año y medio después, nos reencontramos en una parrillada en la casa de nuestro amigo Mauro Taborga.',
   'story.y3':'Febrero 2022 · Nueva York','story.e3.title':'Nueva York','story.e3.body':'Un mes después, Jimmy viajó a Nueva York para visitar a Dani que se había mudado ahí. Fuimos juntos a un concierto de Simon Grossman y ese fin de semana decidimos empezar a salir oficialmente... en Valentine\'s day. Muy romántico el Jimmy.',
   'story.y4':'Junio 2023 · Charlotte','story.e4.title':'Charlotte','story.e4.body':'Después de un año y medio de relación a distancia entre Nueva York y Charlotte, Dani se mudó a Charlotte. Desde entonces, esta ciudad se convirtió en nuestro hogar. También llegó Dante, nuestro gato negro y el más mimado de la casa.',
-  'story.y5.proposal':'Septiembre 2025 · La Paz','story.e5.proposal.title':'La propuesta','story.e5.proposal.body':'En un viaje a La Paz, Jimmy organizó un picnic sorpresa en AceroMarka, el lugar favorito de Dani.',
+  'story.y5.proposal':'Septiembre 2025 · La Paz','story.e5.proposal.title':'Nuestro Compromiso','story.e5.proposal.body':'En un viaje a La Paz, Jimmy organizó un picnic sorpresa en AceroMarka, el lugar favorito de Dani.',
   'story.y5':'Diciembre 2025 · Charlotte, Carolina del Norte','story.e5.title':'Nuestra ceremonia civil','story.e5.body':'Celebramos nuestra ceremonia civil en Charlotte, Carolina del Norte, rodeados de nuestra familia y amigos más cercanos. Fue una celebración chiquita, pero muy especial.',
   'story.y6':'Diciembre 2026 · La Paz','story.e6.title':'¡Nos casamos!','story.e6.body':'Y ahora llegó el momento de celebrar con todos ustedes en La Paz, la ciudad donde los dos nacimos y crecimos.','story.e6.body2':'Lo que más ilusión nos hace de este fin de semana es juntar en un mismo lugar a las personas que han sido parte de nuestras vidas en diferentes etapas: familia, amigos de Bolivia, Notre Dame, Nueva York, Charlotte y muchos otros lugares que nos han acompañado en el camino.','story.e6.body3':'Gracias por acompañarnos en este día. ¡No vemos la hora de celebrar, bailar y compartir este fin de semana con todos ustedes!',
   'story.photo.add':'Añadir foto',
@@ -1207,7 +1220,7 @@ en:{
   'story.y2':'January 2022 · La Paz','story.e2.title':'We crossed paths again','story.e2.body':'A year and a half later, we ran into each other again at a cookout at our friend Mauro Taborga\'s house.',
   'story.y3':'February 2022 · New York','story.e3.title':'New York','story.e3.body':'A month later, Jimmy flew to New York to visit Dani, who had moved there. We went together to a Simon Grossman concert, and that weekend we decided to officially start dating... on Valentine\'s Day. Very romantic, Jimmy.',
   'story.y4':'July 2023 · Charlotte','story.e4.title':'Charlotte','story.e4.body':'After a year and a half of long distance between New York and Charlotte, Dani moved to Charlotte. Ever since, this city has been our home. Dante also joined us — our black cat, and the most spoiled member of the household.',
-  'story.y5.proposal':'September 2025 · La Paz','story.e5.proposal.title':'The proposal','story.e5.proposal.body':'On a trip to La Paz, Jimmy planned a surprise picnic at Aceromarka, Dani\'s favorite place.',
+  'story.y5.proposal':'September 2025 · La Paz','story.e5.proposal.title':'Our Engagement','story.e5.proposal.body':'On a trip to La Paz, Jimmy planned a surprise picnic at Aceromarka, Dani\'s favorite place.',
   'story.y5':'December 2025 · Charlotte, North Carolina','story.e5.title':'Our civil ceremony','story.e5.body':'We held our civil ceremony in Charlotte, North Carolina, surrounded by our closest family and friends. It was a small celebration, but a truly special one.',
   'story.y6':'December 2026 · La Paz','story.e6.title':'We\'re getting married!','story.e6.body':'And now it\'s finally time to celebrate with all of you in La Paz, the city where we were both born and raised.','story.e6.body2':'What excites us most about this weekend is bringing together, in one place, the people who have been part of our lives at different stages: family, friends from Bolivia, Notre Dame, New York, Charlotte, and so many other places that have been part of our journey.','story.e6.body3':'Thank you for being part of this day with us. We can\'t wait to celebrate, dance, and share this weekend with all of you!',
   'story.photo.add':'Add photo',
