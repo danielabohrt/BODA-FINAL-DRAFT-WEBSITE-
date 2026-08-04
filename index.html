@@ -42,7 +42,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(250,249,246,0.97);backdrop
 .nav-monogram .mono-amp{font-family:var(--script);font-size:20px;color:var(--sage-deep);line-height:1;margin:0 4px;position:relative;top:-1px}
 .nav-monogram .mono-j{font-family:var(--script);font-size:28px;font-weight:400;color:var(--sage-deep);line-height:1}
 .nav-links{display:flex;gap:0;list-style:none;flex-wrap:wrap}
-.nav-links button{font-family:var(--sans);font-size:12px;font-weight:400;letter-spacing:0.17em;text-transform:uppercase;color:var(--mid);background:none;border:none;border-bottom:2.5px solid transparent;padding:1.25rem 0.95rem 1.1rem;cursor:pointer;transition:color 0.2s,border-color 0.2s,background 0.2s,transform 0.2s}
+.nav-links button{display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:12px;font-weight:400;letter-spacing:0.17em;text-transform:uppercase;color:var(--mid);background:none;border:none;border-bottom:2.5px solid transparent;padding:1.25rem 0.95rem 1.1rem;cursor:pointer;transition:color 0.2s,border-color 0.2s,background 0.2s,transform 0.2s}
 .nav-links button:hover{color:var(--sage-deep);transform:translateY(-1px)}
 .nav-links button.active{color:var(--sage-deep);border-bottom-color:var(--sage-deep);background:var(--sage-pale);font-weight:600;text-shadow:none}
 .nav-right{display:flex;align-items:center;gap:0.75rem;flex-shrink:0}
@@ -303,7 +303,7 @@ footer em{color:var(--sage-deep)}
   nav{flex-wrap:wrap;padding:0 1rem}
   .nav-links{display:flex;width:100%;flex-direction:column;padding:0;gap:0;border-top:0.5px solid var(--border);max-height:0;overflow:hidden;transition:max-height 0.3s ease,padding 0.3s ease}
   .nav-links.open{max-height:400px;padding:0.5rem 0 1rem}
-  .nav-links button{padding:0.9rem 1rem;text-align:left;border-bottom:none;width:100%;min-height:48px}
+  .nav-links button{padding:0.9rem 1rem;text-align:left;justify-content:flex-start;border-bottom:none;width:100%;min-height:48px}
   .nav-links button.active{border-bottom:none;color:var(--sage-deep)}
   .nav-hamburger{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:1rem;margin:-1rem;flex-shrink:0}
   .nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--dark);transition:transform 0.3s ease,opacity 0.3s ease}
@@ -480,6 +480,7 @@ footer em{color:var(--sage-deep)}
     <li><button onclick="showPage('home')" class="active" id="nav-home" data-i18n="nav.home">Inicio</button></li>
     <li><button onclick="showPage('travel')" id="nav-travel" data-i18n="nav.travel">Cómo llegar</button></li>
     <li><button onclick="showPage('todo')" id="nav-todo" data-i18n="nav.todo">Qué hacer</button></li>
+    <li><button onclick="showPage('story')" id="nav-story" data-i18n="nav.story">Nuestra historia</button></li>
     <li><button onclick="showPage('gifts')" id="nav-gifts" data-i18n="nav.gifts">Lista de Regalos</button></li>
     <li><button onclick="showPage('faq')" id="nav-faq" data-i18n="nav.faq">Preguntas</button></li>
     <li><button onclick="showPage('rsvp')" id="nav-rsvp" data-i18n="nav.rsvp">RSVP</button></li>
@@ -589,6 +590,82 @@ footer em{color:var(--sage-deep)}
   </div>
 </div>
 
+
+<!-- ══════════ OUR STORY ══════════ -->
+<div id="page-story" class="page" style="background:radial-gradient(circle at 12% 0%,rgba(107,114,96,0.12) 0%,transparent 42%),radial-gradient(circle at 92% 95%,rgba(169,116,90,0.09) 0%,transparent 48%),linear-gradient(160deg,#e8dfd4 0%,#f0e8dd 45%,#f5f0e8 100%)">
+  <div class="section" style="padding-bottom:0;text-align:center;max-width:800px">
+    <h2 class="section-title fade-in"><em data-i18n="story.main.title">Nuestra Historia</em></h2>
+  </div>
+
+  <div class="story-chapters">
+
+    <div class="story-chapter fade-in">
+      <div class="story-chapter-dot"><div class="story-chapter-dot-inner"></div></div>
+      <div class="story-chapter-content">
+        <div class="story-chapter-year" data-i18n="story.y1">Julio 2020 · Miami</div>
+        <h3 class="story-chapter-title" data-i18n="story.e1.title">La primera vez que nos conocimos</h3>
+        <p class="story-chapter-body" data-i18n="story.e1.body">Nos conocimos oficialmente por primera vez en Miami durante el fin de semana del 4 de Julio en un boat party.</p>
+      </div>
+    </div>
+
+    <div class="story-chapter fade-in">
+      <div class="story-chapter-dot"><div class="story-chapter-dot-inner"></div></div>
+      <div class="story-chapter-content">
+        <div class="story-chapter-year" data-i18n="story.y2">Enero 2022 · La Paz</div>
+        <h3 class="story-chapter-title" data-i18n="story.e2.title">Nos volvimos a encontrar</h3>
+        <p class="story-chapter-body" data-i18n="story.e2.body">Un año y medio después, nos reencontramos en una parrillada en la casa de nuestro amigo Mauro Taborga.</p>
+      </div>
+    </div>
+
+    <div class="story-chapter fade-in">
+      <div class="story-chapter-dot"><div class="story-chapter-dot-inner"></div></div>
+      <div class="story-chapter-content">
+        <div class="story-chapter-year" data-i18n="story.y3">Febrero 2022 · Nueva York</div>
+        <h3 class="story-chapter-title" data-i18n="story.e3.title">Nueva York</h3>
+        <p class="story-chapter-body" data-i18n="story.e3.body">Un mes después, Jimmy viajó a Nueva York para visitar a Dani que se había mudado ahí. Fuimos juntos a un concierto de Simon Grossman y ese fin de semana decidimos empezar a salir oficialmente... en Valentine's day. Muy romántico el Jimmy.</p>
+      </div>
+    </div>
+
+    <div class="story-chapter fade-in">
+      <div class="story-chapter-dot"><div class="story-chapter-dot-inner"></div></div>
+      <div class="story-chapter-content">
+        <div class="story-chapter-year" data-i18n="story.y4">Junio 2023 · Charlotte</div>
+        <h3 class="story-chapter-title" data-i18n="story.e4.title">Charlotte</h3>
+        <p class="story-chapter-body" data-i18n="story.e4.body">Después de un año y medio de relación a distancia entre Nueva York y Charlotte, Dani se mudó a Charlotte. Desde entonces, esta ciudad se convirtió en nuestro hogar. También llegó Dante, nuestro gato negro y el más mimado de la casa.</p>
+      </div>
+    </div>
+
+    <div class="story-chapter fade-in">
+      <div class="story-chapter-dot"><div class="story-chapter-dot-inner"></div></div>
+      <div class="story-chapter-content">
+        <div class="story-chapter-year" data-i18n="story.y5.proposal">Septiembre 2025 · La Paz</div>
+        <h3 class="story-chapter-title" data-i18n="story.e5.proposal.title">La propuesta</h3>
+        <p class="story-chapter-body" data-i18n="story.e5.proposal.body">En un viaje a La Paz, Jimmy organizó un picnic sorpresa en AceroMarka, el lugar favorito de Dani.</p>
+      </div>
+    </div>
+
+    <div class="story-chapter fade-in">
+      <div class="story-chapter-dot"><div class="story-chapter-dot-inner"></div></div>
+      <div class="story-chapter-content">
+        <div class="story-chapter-year" data-i18n="story.y5">Diciembre 2025 · Charlotte, Carolina del Norte</div>
+        <h3 class="story-chapter-title" data-i18n="story.e5.title">Nuestra ceremonia civil</h3>
+        <p class="story-chapter-body" data-i18n="story.e5.body">Celebramos nuestra ceremonia civil en Charlotte, Carolina del Norte, rodeados de nuestra familia y amigos más cercanos. Fue una celebración chiquita, pero muy especial.</p>
+      </div>
+    </div>
+
+    <div class="story-chapter fade-in">
+      <div class="story-chapter-dot"><div class="story-chapter-dot-inner"></div></div>
+      <div class="story-chapter-content">
+        <div class="story-chapter-year" data-i18n="story.y6">Diciembre 2026 · La Paz</div>
+        <h3 class="story-chapter-title" data-i18n="story.e6.title">¡Nos casamos!</h3>
+        <p class="story-chapter-body" data-i18n="story.e6.body">Y ahora llegó el momento de celebrar con todos ustedes en La Paz, la ciudad donde los dos nacimos y crecimos.</p>
+        <p class="story-chapter-body" data-i18n="story.e6.body2">Lo que más ilusión nos hace de este fin de semana es juntar en un mismo lugar a las personas que han sido parte de nuestras vidas en diferentes etapas: familia, amigos de Bolivia, Notre Dame, Nueva York, Charlotte y muchos otros lugares que nos han acompañado en el camino.</p>
+        <p class="story-chapter-body" data-i18n="story.e6.body3">Gracias por acompañarnos en este día. ¡No vemos la hora de celebrar, bailar y compartir este fin de semana con todos ustedes!</p>
+      </div>
+    </div>
+
+  </div>
+</div>
 
 <!-- ══════════ TRAVEL ══════════ -->
 <div id="page-travel" class="page" style="background:radial-gradient(circle at 88% 0%,rgba(169,116,90,0.1) 0%,transparent 42%),radial-gradient(circle at 8% 100%,rgba(107,114,96,0.1) 0%,transparent 48%),linear-gradient(160deg,#e6e0d5 0%,#ede8df 40%,#f4f0e9 100%)">
@@ -1019,13 +1096,13 @@ es:{
   'faq.title':'Preguntas','faq.intro':'Todo lo que necesitas saber para nuestro día especial','faq.contact.body':'Estamos aca para lo que necesiten, nos pueden escribir directamente por Whatsapp.',
   'story.eyebrow':'Dani & Jimmy','story.main.title':'Nuestra Historia',
   'story.intro':'Una historia que comenzó en un bote en Miami, pasó por las calles de Nueva York y llegó hasta las montañas de Bolivia. Esta es la nuestra.',
-  'story.y1':'Julio 2020 · Miami','story.e1.title':'La primera vez que nos conocimos','story.e1.body':'Nos conocimos oficialmente por primera vez en Miami durante el fin de semana del 4 de Julio. Dani estaba viviendo ahí temporalmente por la pandemia y, no sabemos cómo, pero todos los bolivianos que vivían en Estados Unidos parecían haberse enterado de que estábamos organizando un boat party ese fin de semana. Jimmy fue uno de los que apareció por ahí.','story.e1.body2':'La pasamos increíble. Lo único que no salió tan bien fue que, unos días después, a nosotros (y a varios otros) nos dio COVID.',
-  'story.y2':'Enero 2022 · La Paz','story.e2.title':'Nos volvimos a encontrar','story.e2.body':'Un año y medio después, nos reencontramos en una parrillada en la casa de nuestro amigo Mauro Taborga. Nos quedamos conversando hasta tarde y, otra vez, Jimmy se iba al día siguiente. Era la segunda vez que pasaba... así nació el apodo de "Chacrita".',
-  'story.y3':'Febrero 2022 · Nueva York','story.e3.title':'Nueva York','story.e3.body':'Un mes después, Jimmy viajó a Nueva York para visitar a Dani. Fuimos juntos a un concierto de Simon Grossman y ese fin de semana decidimos empezar a salir.','story.e3.body2':'Así que, si están buscando un responsable de todo esto... gracias, Simon.',
-  'story.y4':'Junio 2023 · Charlotte','story.e4.title':'Charlotte','story.e4.body':'Después de un año y medio de relación a distancia entre Nueva York y Charlotte, Dani se mudó a Charlotte. Desde entonces, esta ciudad se convirtió en nuestro hogar.','story.e4.body2':'También llegó Dante, nuestro gato negro y el más mimado de la casa.',
-  'story.y5.proposal':'Septiembre 2025 · La Paz','story.e5.proposal.title':'Nuestro Compromiso','story.e5.proposal.body':'En un viaje a La Paz, Jimmy organizó un picnic sorpresa en AceroMarka, el lugar favorito de Dani. Había cargado el auto con todo lo necesario para la propuesta, pero había un pequeño problema: el camino de tierra era demasiado para el auto.','story.e5.proposal.body2':'Mientras las llantas patinaban y empezaban a echar humo, Dani no entendía por qué Jimmy insistía tanto en subir con ese auto en lugar de dejarlo abajo y usar el suyo. Después de unos minutos de estrés (más para Jimmy que para Dani), el auto finalmente llegó.','story.e5.proposal.body3':'Por suerte, la sorpresa seguía intacta. Y Dani dijo que sí.',
+  'story.y1':'Julio 2020 · Miami','story.e1.title':'La primera vez que nos conocimos','story.e1.body':'Nos conocimos oficialmente por primera vez en Miami durante el fin de semana del 4 de Julio en un boat party.',
+  'story.y2':'Enero 2022 · La Paz','story.e2.title':'Nos volvimos a encontrar','story.e2.body':'Un año y medio después, nos reencontramos en una parrillada en la casa de nuestro amigo Mauro Taborga.',
+  'story.y3':'Febrero 2022 · Nueva York','story.e3.title':'Nueva York','story.e3.body':'Un mes después, Jimmy viajó a Nueva York para visitar a Dani que se había mudado ahí. Fuimos juntos a un concierto de Simon Grossman y ese fin de semana decidimos empezar a salir oficialmente... en Valentine\'s day. Muy romántico el Jimmy.',
+  'story.y4':'Junio 2023 · Charlotte','story.e4.title':'Charlotte','story.e4.body':'Después de un año y medio de relación a distancia entre Nueva York y Charlotte, Dani se mudó a Charlotte. Desde entonces, esta ciudad se convirtió en nuestro hogar. También llegó Dante, nuestro gato negro y el más mimado de la casa.',
+  'story.y5.proposal':'Septiembre 2025 · La Paz','story.e5.proposal.title':'La propuesta','story.e5.proposal.body':'En un viaje a La Paz, Jimmy organizó un picnic sorpresa en AceroMarka, el lugar favorito de Dani.',
   'story.y5':'Diciembre 2025 · Charlotte, Carolina del Norte','story.e5.title':'Nuestra ceremonia civil','story.e5.body':'Celebramos nuestra ceremonia civil en Charlotte, Carolina del Norte, rodeados de nuestra familia y amigos más cercanos. Fue una celebración chiquita, pero muy especial.',
-  'story.y6':'Diciembre 2026 · La Paz','story.e6.title':'¡Nos casamos!','story.e6.body':'Y ahora llegó el momento de celebrar con todos ustedes en La Paz, la ciudad donde los dos nacimos y crecimos.','story.e6.body2':'Lo que más ilusión nos hace de este fin de semana es juntar en un mismo lugar a las personas que han sido parte de nuestras vidas en diferentes etapas: familia, amigos de Bolivia, Notre Dame, Nueva York, Charlotte y muchos otros lugares que nos han acompañado en el camino.','story.e6.body3':'Algunos ya se conocen, otros se van a conocer por primera vez, y eso nos emociona muchísimo. Gracias por acompañarnos en este día. ¡No vemos la hora de celebrar, bailar y compartir este fin de semana con todos ustedes!',
+  'story.y6':'Diciembre 2026 · La Paz','story.e6.title':'¡Nos casamos!','story.e6.body':'Y ahora llegó el momento de celebrar con todos ustedes en La Paz, la ciudad donde los dos nacimos y crecimos.','story.e6.body2':'Lo que más ilusión nos hace de este fin de semana es juntar en un mismo lugar a las personas que han sido parte de nuestras vidas en diferentes etapas: familia, amigos de Bolivia, Notre Dame, Nueva York, Charlotte y muchos otros lugares que nos han acompañado en el camino.','story.e6.body3':'Gracias por acompañarnos en este día. ¡No vemos la hora de celebrar, bailar y compartir este fin de semana con todos ustedes!',
   'story.photo.add':'Añadir foto',
   'rsvp.eyebrow':'por favor confirma tu asistencia antes del 30 de septiembre',
   'rsvp.name.label':'¿Cómo te llamas?','rsvp.name.ph':'tu nombre...',
@@ -1112,13 +1189,13 @@ en:{
   'faq.title':'Questions','faq.intro':'Everything you need to know for our special day','faq.contact.body':'We are here for whatever you need — feel free to reach out to us directly on WhatsApp.',
   'story.eyebrow':'Dani & Jimmy','story.main.title':'Our Story',
   'story.intro':'A story that started on a boat in Miami, wound through the streets of New York, and found its way back to the mountains of Bolivia. This is ours.',
-  'story.y1':'July 2020 · Miami','story.e1.title':'The first time we met','story.e1.body':'We officially met for the first time in Miami over the Fourth of July weekend. Dani was living there temporarily because of the pandemic, and somehow every Bolivian living in the U.S. seemed to have heard that we were throwing a boat party that weekend. Jimmy was one of the people who showed up.','story.e1.body2':'We had an amazing time. The only thing that didn\'t go so well was that, a few days later, we (and several others) came down with COVID.',
-  'story.y2':'January 2022 · La Paz','story.e2.title':'We crossed paths again','story.e2.body':'A year and a half later, we ran into each other again at a cookout at our friend Mauro Taborga\'s house. We stayed up talking late into the night, and once again, Jimmy was leaving the next day. It was the second time it happened... and that\'s how the nickname "Chacrita" was born.',
-  'story.y3':'February 2022 · New York','story.e3.title':'New York','story.e3.body':'A month later, Jimmy flew to New York to visit Dani. We went together to a Simon Grossman concert, and that weekend we decided to officially start dating.','story.e3.body2':'So if you\'re looking for someone to blame for all of this... thank Simon.',
-  'story.y4':'July 2023 · Charlotte','story.e4.title':'Charlotte','story.e4.body':'After a year and a half of long distance between New York and Charlotte, Dani moved to Charlotte. Ever since, this city has been our home.','story.e4.body2':'Dante also joined us — our black cat, and the most spoiled member of the household.',
-  'story.y5.proposal':'September 2025 · La Paz','story.e5.proposal.title':'Our Engagement','story.e5.proposal.body':'On a trip to La Paz, Jimmy planned a surprise picnic at Aceromarka, Dani\'s favorite place. He had packed the car with everything needed for the proposal, but there was one small problem: the dirt road was a bit too much for the car.','story.e5.proposal.body2':'As the tires spun and started smoking, Dani couldn\'t understand why Jimmy insisted so much on driving up in that car instead of leaving it below and taking hers. After a few stressful minutes (more for Jimmy than for Dani), the car finally made it up.','story.e5.proposal.body3':'Luckily, the surprise was still intact. And Dani said yes.',
+  'story.y1':'July 2020 · Miami','story.e1.title':'The first time we met','story.e1.body':'We officially met for the first time in Miami over the Fourth of July weekend, at a boat party.',
+  'story.y2':'January 2022 · La Paz','story.e2.title':'We crossed paths again','story.e2.body':'A year and a half later, we ran into each other again at a cookout at our friend Mauro Taborga\'s house.',
+  'story.y3':'February 2022 · New York','story.e3.title':'New York','story.e3.body':'A month later, Jimmy flew to New York to visit Dani, who had moved there. We went together to a Simon Grossman concert, and that weekend we decided to officially start dating... on Valentine\'s Day. Very romantic, Jimmy.',
+  'story.y4':'July 2023 · Charlotte','story.e4.title':'Charlotte','story.e4.body':'After a year and a half of long distance between New York and Charlotte, Dani moved to Charlotte. Ever since, this city has been our home. Dante also joined us — our black cat, and the most spoiled member of the household.',
+  'story.y5.proposal':'September 2025 · La Paz','story.e5.proposal.title':'The proposal','story.e5.proposal.body':'On a trip to La Paz, Jimmy planned a surprise picnic at Aceromarka, Dani\'s favorite place.',
   'story.y5':'December 2025 · Charlotte, North Carolina','story.e5.title':'Our civil ceremony','story.e5.body':'We held our civil ceremony in Charlotte, North Carolina, surrounded by our closest family and friends. It was a small celebration, but a truly special one.',
-  'story.y6':'December 2026 · La Paz','story.e6.title':'We\'re getting married!','story.e6.body':'And now it\'s finally time to celebrate with all of you in La Paz, the city where we were both born and raised.','story.e6.body2':'What excites us most about this weekend is bringing together, in one place, the people who have been part of our lives at different stages: family, friends from Bolivia, Notre Dame, New York, Charlotte, and so many other places that have been part of our journey.','story.e6.body3':'Some of you already know each other, others will be meeting for the first time, and that makes us so happy. Thank you for being part of this day with us. We can\'t wait to celebrate, dance, and share this weekend with all of you!',
+  'story.y6':'December 2026 · La Paz','story.e6.title':'We\'re getting married!','story.e6.body':'And now it\'s finally time to celebrate with all of you in La Paz, the city where we were both born and raised.','story.e6.body2':'What excites us most about this weekend is bringing together, in one place, the people who have been part of our lives at different stages: family, friends from Bolivia, Notre Dame, New York, Charlotte, and so many other places that have been part of our journey.','story.e6.body3':'Thank you for being part of this day with us. We can\'t wait to celebrate, dance, and share this weekend with all of you!',
   'story.photo.add':'Add photo',
   'rsvp.eyebrow':'kindly reply by September 30th',
   'rsvp.name.label':'What is your name?','rsvp.name.ph':'your name...',
