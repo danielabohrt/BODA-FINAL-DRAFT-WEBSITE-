@@ -481,24 +481,40 @@ footer em{color:var(--sage-deep)}
 .travel-hero-label{font-family:var(--sans);font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted)}
 @media(max-width:640px){.travel-hero-photo{height:220px}}
 
-/* ── STORY REDESIGN (text-only timeline) ──────────── */
+/* ── STORY REDESIGN (alternating editorial timeline) ──────────── */
 .story-intro-line{font-family:var(--display);font-size:17px;font-weight:400;color:var(--mid);line-height:1.85;margin:1rem auto 0}
-.story-chapters{max-width:600px;margin:2rem auto 3rem;padding:3.5rem 2.5rem 4rem;position:relative;background:rgba(255,255,255,0.6);border-radius:10px;box-shadow:0 24px 60px -34px rgba(42,36,32,0.3)}
-.story-chapters::before{content:'';position:absolute;left:2.4rem;top:0.5rem;bottom:3.2rem;width:1px;background:linear-gradient(to bottom,transparent 0%,rgba(107,114,96,0.3) 6%,rgba(107,114,96,0.3) 94%,transparent 100%)}
-.story-chapter{display:flex;gap:1.4rem;padding-bottom:3rem;position:relative}
-.story-chapter:last-child{padding-bottom:0}
-.story-chapter-dot{flex-shrink:0;width:33px;padding-top:0.4rem;display:flex;justify-content:center;position:relative;z-index:1}
-.story-chapter-dot-inner{width:9px;height:9px;border-radius:50%;background:var(--sage-deep)}
-.story-chapter-content{flex:1;min-width:0;padding-top:0.05rem}
-.story-chapter-year{font-family:var(--sc);font-size:12px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage-deep);margin-bottom:0.5rem}
-.story-chapter-title{font-family:var(--display);font-size:26px;font-weight:500;color:var(--dark);margin-bottom:0.5rem;line-height:1.2}
-.story-chapter-body{font-size:16px;color:var(--mid);line-height:1.85;font-weight:300}
-.story-chapter-body+.story-chapter-body{margin-top:1rem}
-@media(max-width:640px){
-  .story-chapters{padding:2.5rem 1rem 4rem}
-  .story-chapters::before{left:1.65rem}
-  .story-chapter{gap:1rem}
-  .story-chapter-title{font-size:22px}
+.story-timeline{max-width:880px;margin:3rem auto 0;position:relative;padding:0.5rem 0 0}
+.story-timeline::before{content:'';position:absolute;left:50%;top:0.4rem;bottom:0.4rem;width:1px;transform:translateX(-50%);background:linear-gradient(to bottom,transparent 0%,rgba(107,114,96,0.32) 4%,rgba(107,114,96,0.32) 96%,transparent 100%)}
+.story-item{width:50%;box-sizing:border-box;padding:0 3.25rem 3.5rem;position:relative}
+.story-item::before{content:'';position:absolute;top:0.45rem;width:12px;height:12px;border-radius:50%;background:var(--sage-deep);box-shadow:0 0 0 5px #f7f4ee;z-index:2}
+.story-item-left{text-align:right}
+.story-item-left::before{right:-6px}
+.story-item-right{text-align:left;margin-left:50%}
+.story-item-right::before{left:-6px}
+.story-card{display:inline-block;text-align:left;background:#fff;border-radius:10px;padding:2.1rem 2.35rem;box-shadow:0 22px 48px -28px rgba(42,36,32,0.32);position:relative;max-width:390px;overflow:hidden}
+.story-card-num{position:absolute;top:-1.4rem;font-family:var(--display);font-size:80px;font-weight:600;color:rgba(107,114,96,0.09);line-height:1;z-index:0;pointer-events:none;user-select:none}
+.story-item-left .story-card-num{right:0.6rem}
+.story-item-right .story-card-num{left:0.6rem}
+.story-card-year{position:relative;z-index:1;font-family:var(--sc);font-size:12px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage-deep);margin-bottom:0.6rem}
+.story-card-title{position:relative;z-index:1;font-family:var(--display);font-size:24px;font-weight:500;color:var(--dark);margin-bottom:0.55rem;line-height:1.2}
+.story-card-body{position:relative;z-index:1;font-size:15.5px;color:var(--mid);line-height:1.8;font-weight:300}
+.story-finale{max-width:640px;margin:0.5rem auto 3.5rem;padding:3rem 2.75rem;text-align:center;background:linear-gradient(165deg,var(--sage-pale) 0%,#fff 100%);border:1px solid rgba(107,114,96,0.22);border-radius:14px;box-shadow:0 26px 56px -30px rgba(42,36,32,0.32);position:relative}
+.story-finale-icon{font-size:22px;color:var(--sage-deep);margin-bottom:1rem}
+.story-finale-year{font-family:var(--sc);font-size:12px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage-deep);margin-bottom:0.6rem}
+.story-finale-title{font-family:var(--display);font-size:30px;font-weight:500;color:var(--dark);margin-bottom:1rem;line-height:1.2}
+.story-finale-body{font-size:16px;color:var(--mid);line-height:1.85;font-weight:300;max-width:480px;margin:0 auto}
+.story-finale-body+.story-finale-body{margin-top:1rem}
+@media(max-width:720px){
+  .story-timeline{margin-top:2rem}
+  .story-timeline::before{left:1.1rem}
+  .story-item{width:100%;margin-left:0!important;text-align:left!important;padding:0 0 2.25rem 2.75rem}
+  .story-item::before{left:0.55rem!important;right:auto!important}
+  .story-card{max-width:none;width:100%;padding:1.75rem 1.5rem}
+  .story-card-num{font-size:60px;top:-1rem}
+  .story-item-left .story-card-num,.story-item-right .story-card-num{right:0.5rem;left:auto}
+  .story-card-title{font-size:21px}
+  .story-finale{padding:2.25rem 1.5rem;margin:0 1rem 2.5rem}
+  .story-finale-title{font-size:24px}
 }
 </style>
 </head>
@@ -549,7 +565,7 @@ footer em{color:var(--sage-deep)}
     </div>
 
     <!-- RSVP section -->
-    <div class="fade-in" style="transition-delay:0.34s;margin-top:2.5rem;padding:2.25rem 2rem;background:rgba(107,114,96,0.08);border:1px solid rgba(107,114,96,0.22);border-top:3px solid var(--sage-deep);border-radius:6px;box-shadow:0 14px 30px -22px rgba(42,36,32,0.3);text-align:center">
+    <div class="fade-in" style="transition-delay:0.34s;margin-top:4.5rem;padding:2.25rem 2rem;background:rgba(107,114,96,0.08);border:1px solid rgba(107,114,96,0.22);border-top:3px solid var(--sage-deep);border-radius:6px;box-shadow:0 14px 30px -22px rgba(42,36,32,0.3);text-align:center">
       <div style="font-family:var(--display);font-size:19px;font-weight:500;color:var(--dark);margin-bottom:1.25rem" data-i18n="home.deadline">Por favor confirmen su asistencia hasta el 30 de septiembre</div>
       <button onclick="showPage('rsvp')" data-i18n="rsvp.cta.btn" style="font-family:var(--sans);font-size:12px;letter-spacing:0.28em;text-transform:uppercase;color:#fff;background:var(--clay);border:none;padding:14px 48px;border-radius:3px;cursor:pointer;font-weight:500;transition:opacity 0.25s">RSVP</button>
     </div>
@@ -557,7 +573,7 @@ footer em{color:var(--sage-deep)}
   </div>
 
   <!-- Schedule section (merged) -->
-  <div style="background:linear-gradient(180deg,rgba(255,255,255,0) 0px,rgba(255,255,255,1) 220px,rgba(255,255,255,1) 100%);padding:2rem 0 4rem;margin-top:0">
+  <div style="background:#ffffff;padding:2rem 0 4rem;margin-top:2.5rem">
   <div class="section" style="padding-bottom:0;text-align:center">
     <p class="eyebrow fade-in" data-i18n="sched.eyebrow">Sábado, 19 de Diciembre de 2026</p>
     <h2 class="section-title fade-in" style="transition-delay:0.08s"><em data-i18n="sched.program.title">Programación</em></h2>
@@ -628,73 +644,71 @@ footer em{color:var(--sage-deep)}
     <h2 class="section-title fade-in"><em data-i18n="story.main.title">Nuestra Historia</em></h2>
   </div>
 
-  <div class="story-chapters">
+  <div class="story-timeline">
 
-    <div class="story-chapter fade-in">
-      <div class="story-chapter-dot"><div class="story-chapter-dot-inner"></div></div>
-      <div class="story-chapter-content">
-        <div class="story-chapter-year" data-i18n="story.y1">Julio 2020 · Miami</div>
-        <h3 class="story-chapter-title" data-i18n="story.e1.title">La primera vez que nos conocimos</h3>
-        <p class="story-chapter-body" data-i18n="story.e1.body">Nos conocimos oficialmente por primera vez en Miami durante el fin de semana del 4 de Julio en un boat party.</p>
+    <div class="story-item story-item-left fade-in">
+      <div class="story-card">
+        <div class="story-card-num">01</div>
+        <div class="story-card-year" data-i18n="story.y1">Julio 2020 · Miami</div>
+        <h3 class="story-card-title" data-i18n="story.e1.title">La primera vez que nos conocimos</h3>
+        <p class="story-card-body" data-i18n="story.e1.body">Nos conocimos oficialmente por primera vez en Miami durante el fin de semana del 4 de Julio en un boat party.</p>
       </div>
     </div>
 
-    <div class="story-chapter fade-in">
-      <div class="story-chapter-dot"><div class="story-chapter-dot-inner"></div></div>
-      <div class="story-chapter-content">
-        <div class="story-chapter-year" data-i18n="story.y2">Enero 2022 · La Paz</div>
-        <h3 class="story-chapter-title" data-i18n="story.e2.title">Nos volvimos a encontrar</h3>
-        <p class="story-chapter-body" data-i18n="story.e2.body">Un año y medio después, nos reencontramos en una parrillada en la casa de nuestro amigo Mauro Taborga.</p>
+    <div class="story-item story-item-right fade-in">
+      <div class="story-card">
+        <div class="story-card-num">02</div>
+        <div class="story-card-year" data-i18n="story.y2">Enero 2022 · La Paz</div>
+        <h3 class="story-card-title" data-i18n="story.e2.title">Nos volvimos a encontrar</h3>
+        <p class="story-card-body" data-i18n="story.e2.body">Un año y medio después, nos reencontramos en una parrillada en la casa de nuestro amigo Mauro Taborga.</p>
       </div>
     </div>
 
-    <div class="story-chapter fade-in">
-      <div class="story-chapter-dot"><div class="story-chapter-dot-inner"></div></div>
-      <div class="story-chapter-content">
-        <div class="story-chapter-year" data-i18n="story.y3">Febrero 2022 · Nueva York</div>
-        <h3 class="story-chapter-title" data-i18n="story.e3.title">Nueva York</h3>
-        <p class="story-chapter-body" data-i18n="story.e3.body">Un mes después, Jimmy viajó a Nueva York para visitar a Dani que se había mudado ahí. Fuimos juntos a un concierto de Simon Grossman y ese fin de semana decidimos empezar a salir oficialmente... en Valentine's day. Muy romántico el Jimmy.</p>
+    <div class="story-item story-item-left fade-in">
+      <div class="story-card">
+        <div class="story-card-num">03</div>
+        <div class="story-card-year" data-i18n="story.y3">Febrero 2022 · Nueva York</div>
+        <h3 class="story-card-title" data-i18n="story.e3.title">Nueva York</h3>
+        <p class="story-card-body" data-i18n="story.e3.body">Un mes después, Jimmy viajó a Nueva York para visitar a Dani que se había mudado ahí. Fuimos juntos a un concierto de Simon Grossman y ese fin de semana decidimos empezar a salir oficialmente... en Valentine's day. Muy romántico el Jimmy.</p>
       </div>
     </div>
 
-    <div class="story-chapter fade-in">
-      <div class="story-chapter-dot"><div class="story-chapter-dot-inner"></div></div>
-      <div class="story-chapter-content">
-        <div class="story-chapter-year" data-i18n="story.y4">Junio 2023 · Charlotte</div>
-        <h3 class="story-chapter-title" data-i18n="story.e4.title">Charlotte</h3>
-        <p class="story-chapter-body" data-i18n="story.e4.body">Después de un año y medio de relación a distancia entre Nueva York y Charlotte, Dani se mudó a Charlotte. Desde entonces, esta ciudad se convirtió en nuestro hogar. También llegó Dante, nuestro gato negro y el más mimado de la casa.</p>
+    <div class="story-item story-item-right fade-in">
+      <div class="story-card">
+        <div class="story-card-num">04</div>
+        <div class="story-card-year" data-i18n="story.y4">Junio 2023 · Charlotte</div>
+        <h3 class="story-card-title" data-i18n="story.e4.title">Charlotte</h3>
+        <p class="story-card-body" data-i18n="story.e4.body">Después de un año y medio de relación a distancia entre Nueva York y Charlotte, Dani se mudó a Charlotte. Desde entonces, esta ciudad se convirtió en nuestro hogar. También llegó Dante, nuestro gato negro y el más mimado de la casa.</p>
       </div>
     </div>
 
-    <div class="story-chapter fade-in">
-      <div class="story-chapter-dot"><div class="story-chapter-dot-inner"></div></div>
-      <div class="story-chapter-content">
-        <div class="story-chapter-year" data-i18n="story.y5.proposal">Septiembre 2025 · La Paz</div>
-        <h3 class="story-chapter-title" data-i18n="story.e5.proposal.title">Nuestro Compromiso</h3>
-        <p class="story-chapter-body" data-i18n="story.e5.proposal.body">En un viaje a La Paz, Jimmy organizó un picnic sorpresa en AceroMarka, el lugar favorito de Dani.</p>
+    <div class="story-item story-item-left fade-in">
+      <div class="story-card">
+        <div class="story-card-num">05</div>
+        <div class="story-card-year" data-i18n="story.y5.proposal">Septiembre 2025 · La Paz</div>
+        <h3 class="story-card-title" data-i18n="story.e5.proposal.title">Nuestro Compromiso</h3>
+        <p class="story-card-body" data-i18n="story.e5.proposal.body">En un viaje a La Paz, Jimmy organizó un picnic sorpresa en AceroMarka, el lugar favorito de Dani.</p>
       </div>
     </div>
 
-    <div class="story-chapter fade-in">
-      <div class="story-chapter-dot"><div class="story-chapter-dot-inner"></div></div>
-      <div class="story-chapter-content">
-        <div class="story-chapter-year" data-i18n="story.y5">Diciembre 2025 · Charlotte, Carolina del Norte</div>
-        <h3 class="story-chapter-title" data-i18n="story.e5.title">Nuestra ceremonia civil</h3>
-        <p class="story-chapter-body" data-i18n="story.e5.body">Celebramos nuestra ceremonia civil en Charlotte, Carolina del Norte, rodeados de nuestra familia y amigos más cercanos. Fue una celebración chiquita, pero muy especial.</p>
+    <div class="story-item story-item-right fade-in">
+      <div class="story-card">
+        <div class="story-card-num">06</div>
+        <div class="story-card-year" data-i18n="story.y5">Diciembre 2025 · Charlotte, Carolina del Norte</div>
+        <h3 class="story-card-title" data-i18n="story.e5.title">Nuestra ceremonia civil</h3>
+        <p class="story-card-body" data-i18n="story.e5.body">Celebramos nuestra ceremonia civil en Charlotte, Carolina del Norte, rodeados de nuestra familia y amigos más cercanos. Fue una celebración chiquita, pero muy especial.</p>
       </div>
     </div>
 
-    <div class="story-chapter fade-in">
-      <div class="story-chapter-dot"><div class="story-chapter-dot-inner"></div></div>
-      <div class="story-chapter-content">
-        <div class="story-chapter-year" data-i18n="story.y6">Diciembre 2026 · La Paz</div>
-        <h3 class="story-chapter-title" data-i18n="story.e6.title">¡Nos casamos!</h3>
-        <p class="story-chapter-body" data-i18n="story.e6.body">Y ahora llegó el momento de celebrar con todos ustedes en La Paz, la ciudad donde los dos nacimos y crecimos.</p>
-        <p class="story-chapter-body" data-i18n="story.e6.body2">Lo que más ilusión nos hace de este fin de semana es juntar en un mismo lugar a las personas que han sido parte de nuestras vidas en diferentes etapas: familia, amigos de Bolivia, Notre Dame, Nueva York, Charlotte y muchos otros lugares que nos han acompañado en el camino.</p>
-        <p class="story-chapter-body" data-i18n="story.e6.body3">Gracias por acompañarnos en este día. ¡No vemos la hora de celebrar, bailar y compartir este fin de semana con todos ustedes!</p>
-      </div>
-    </div>
+  </div>
 
+  <div class="story-finale fade-in">
+    <div class="story-finale-icon">❦</div>
+    <div class="story-finale-year" data-i18n="story.y6">Diciembre 2026 · La Paz</div>
+    <h3 class="story-finale-title" data-i18n="story.e6.title">¡Nos casamos!</h3>
+    <p class="story-finale-body" data-i18n="story.e6.body">Y ahora llegó el momento de celebrar con todos ustedes en La Paz, la ciudad donde los dos nacimos y crecimos.</p>
+    <p class="story-finale-body" data-i18n="story.e6.body2">Lo que más ilusión nos hace de este fin de semana es juntar en un mismo lugar a las personas que han sido parte de nuestras vidas en diferentes etapas: familia, amigos de Bolivia, Notre Dame, Nueva York, Charlotte y muchos otros lugares que nos han acompañado en el camino.</p>
+    <p class="story-finale-body" data-i18n="story.e6.body3">Gracias por acompañarnos en este día. ¡No vemos la hora de celebrar, bailar y compartir este fin de semana con todos ustedes!</p>
   </div>
 </div>
 
