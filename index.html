@@ -523,7 +523,7 @@ footer em{color:var(--sage-deep)}
     <!-- RSVP section -->
     <div class="fade-in" style="transition-delay:0.34s;margin-top:2.5rem;padding:2.25rem 2rem;background:rgba(107,114,96,0.08);border:1px solid rgba(107,114,96,0.22);border-top:3px solid var(--sage-deep);border-radius:6px;box-shadow:0 14px 30px -22px rgba(42,36,32,0.3);text-align:center">
       <div style="font-family:var(--display);font-size:19px;font-weight:500;color:var(--dark);margin-bottom:1.25rem" data-i18n="home.deadline">Por favor confirmen su asistencia hasta el 30 de septiembre</div>
-      <button onclick="openRSVP()" data-i18n="rsvp.cta.btn" style="font-family:var(--sans);font-size:12px;letter-spacing:0.28em;text-transform:uppercase;color:#fff;background:var(--clay);border:none;padding:14px 48px;border-radius:3px;cursor:pointer;font-weight:500;transition:opacity 0.25s">RSVP</button>
+      <button onclick="showPage('rsvp')" data-i18n="rsvp.cta.btn" style="font-family:var(--sans);font-size:12px;letter-spacing:0.28em;text-transform:uppercase;color:#fff;background:var(--clay);border:none;padding:14px 48px;border-radius:3px;cursor:pointer;font-weight:500;transition:opacity 0.25s">RSVP</button>
     </div>
 
   </div>
@@ -697,8 +697,12 @@ footer em{color:var(--sage-deep)}
         <div class="hotel-card-body"><h3>Atix Hotel <span style="font-family:var(--sans);font-size:12px;color:var(--muted);font-style:normal">Marriott Bonvoy</span></h3><p data-i18n="hotel.atix.body">Hotel de diseño contemporáneo en Zona Sur con vistas desde la azotea y restaurante reconocido.</p><a href="https://www.atixhotel.com" target="_blank" data-i18n="hotel.book">Reservar →</a></div>
       </div>
       <div class="hotel-card fade-in">
-        <div class="hotel-card-img" id="hc3"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAE4QDHyPjOLurUSj5eaR3LcRHhNMCbAMEXtbnVo2WP4pQp4DFRFkqZiER5JHyLMvGMgfw-RKMnf0DH9MwGKVvV_lNtyL-U2QEv_eWEJu3lUH9LW8MGLzC3Z2QGGjjsSfM4bX44=s1360-w1360-h1020-rw" alt="Met Hotel Hyatt, La Paz" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"/></div>
-        <div class="hotel-card-body"><h3>Met Hotel <span style="font-family:var(--sans);font-size:12px;color:var(--muted);font-style:normal">Hyatt</span></h3><p data-i18n="hotel.met.body">Hotel Hyatt en La Paz. Habitaciones confortables con excelentes instalaciones.</p><a href="https://www.caminoreal.com.bo" target="_blank" data-i18n="hotel.book">Reservar →</a></div>
+        <div class="hotel-card-img" id="hc3"><span class="hotel-photo-label" data-i18n="hotel.photo.soon">Foto próximamente</span></div>
+        <div class="hotel-card-body"><h3>Met Hotel</h3><p data-i18n="hotel.met.body">Hotel de diseño contemporáneo en Calacoto con spa, piscina interior y restaurante de autor.</p><a href="https://metlapaz.com/" target="_blank" data-i18n="hotel.book">Reservar →</a></div>
+      </div>
+      <div class="hotel-card fade-in">
+        <div class="hotel-card-img" id="hc5"><span class="hotel-photo-label" data-i18n="hotel.photo.soon">Foto próximamente</span></div>
+        <div class="hotel-card-body"><h3>Camino Real</h3><p data-i18n="hotel.caminoreal.body">Hotel clásico y confiable en La Paz, con buena ubicación y todas las comodidades.</p><a href="https://www.caminoreal.com.bo/hotel-la-paz" target="_blank" data-i18n="hotel.book">Reservar →</a></div>
       </div>
       <div class="hotel-card fade-in">
         <div class="hotel-card-img" id="hc4"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1666801491956721222/original/148e9c9b-4e6e-4640-97b8-0413beb06c41.jpeg?im_w=1200" alt="Airbnb en Zona Sur, La Paz" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"/></div>
@@ -1050,7 +1054,9 @@ es:{
   'travel.hotels.title':'Dónde hospedarse en La Paz','travel.hotels.intro':'Hemos reservado blocks en los siguientes hoteles:',
   'hotel.casagrande.body':'Hotel boutique de lujo en Calacoto con excelente servicio, restaurante y spa.',
   'hotel.atix.body':'Hotel de diseño contemporáneo en Zona Sur con vistas desde la azotea y restaurante reconocido.',
-  'hotel.met.body':'Hotel Hyatt en La Paz. Habitaciones confortables con excelentes instalaciones.',
+  'hotel.met.body':'Hotel de diseño contemporáneo en Calacoto con spa, piscina interior y restaurante de autor.',
+  'hotel.caminoreal.body':'Hotel clásico y confiable en La Paz, con buena ubicación y todas las comodidades.',
+  'hotel.photo.soon':'Foto próximamente',
   'hotel.airbnb.body':'Recomendamos buscar opciones cerca al barrio de San Miguel (Calacoto, Zona Sur).',
   'hotel.book':'Reservar →',
   'travel.tips.title':'Consejos prácticos',
@@ -1141,7 +1147,9 @@ en:{
   'travel.hotels.title':'Where to stay in La Paz','travel.hotels.intro':'We have reserved room blocks at the following hotels:',
   'hotel.casagrande.body':'Luxury boutique hotel in Calacoto with excellent service, restaurant, and spa.',
   'hotel.atix.body':'Contemporary design hotel in Zona Sur with rooftop views and acclaimed restaurant.',
-  'hotel.met.body':'Hyatt hotel in La Paz. Comfortable rooms with excellent facilities.',
+  'hotel.met.body':'Contemporary design hotel in Calacoto with a spa, indoor pool, and a well-regarded restaurant.',
+  'hotel.caminoreal.body':'A classic, reliable hotel in La Paz with a great location and all the comforts.',
+  'hotel.photo.soon':'Photo coming soon',
   'hotel.airbnb.body':'We recommend looking for options in the neighborhood of San Miguel (Calacoto, Zona Sur).',
   'hotel.book':'Book →',
   'travel.tips.title':'Practical tips',
