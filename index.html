@@ -97,12 +97,12 @@ nav{position:sticky;top:0;z-index:100;background:rgba(250,249,246,0.97);backdrop
 .gift-ticket-perf::before,.gift-ticket-perf::after{content:'';position:absolute;left:-14px;width:28px;height:28px;border-radius:50%;background:var(--sand);box-shadow:inset 0 0 0 1px rgba(107,114,96,0.16)}
 .gift-ticket-perf::before{top:-14px}
 .gift-ticket-perf::after{bottom:-14px}
-.gift-ticket-stub{width:230px;flex-shrink:0;background:var(--sage-pale);border-radius:0 12px 12px 0;padding:2rem 1.5rem;display:flex;flex-direction:column;align-items:center;justify-content:space-evenly;text-align:center}
-.gift-ticket-qr-cell{display:flex;flex-direction:column;align-items:center;gap:0.55rem}
-.gift-ticket-qr-label{font-family:var(--display);font-size:14px;color:var(--dark)}
+.gift-ticket-stub{width:230px;flex-shrink:0;background:var(--sage-pale);border-radius:0 12px 12px 0;padding:2.5rem 1.5rem;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.gift-ticket-qr-cell{height:100px;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.gift-ticket-qr-cell:first-child{border-bottom:0.5px solid rgba(107,114,96,0.22)}
 .gift-ticket-qr-box{background:#fff;padding:6px;border-radius:6px;box-shadow:0 10px 24px -20px rgba(42,36,32,0.3)}
-.gift-ticket-qr-box img{width:108px;height:auto;display:block;border-radius:2px}
-.gift-ticket-qr-placeholder{width:108px;height:108px;display:flex;align-items:center;justify-content:center;background:rgba(107,114,96,0.06);border:1px dashed rgba(107,114,96,0.35);border-radius:4px;cursor:pointer;position:relative}
+.gift-ticket-qr-box img{width:88px;height:auto;display:block;border-radius:2px}
+.gift-ticket-qr-placeholder{width:100px;height:100px;display:flex;align-items:center;justify-content:center;background:rgba(107,114,96,0.06);border:1px dashed rgba(107,114,96,0.35);border-radius:4px;cursor:pointer;position:relative}
 .gift-ticket-qr-placeholder input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
 .gift-ticket-qr-placeholder span{font-family:var(--sc);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);padding:0 6px;text-align:center}
 @media(max-width:640px){
@@ -112,7 +112,9 @@ nav{position:sticky;top:0;z-index:100;background:rgba(250,249,246,0.97);backdrop
   .gift-ticket-perf::before,.gift-ticket-perf::after{top:-14px;left:auto}
   .gift-ticket-perf::before{left:-14px}
   .gift-ticket-perf::after{right:-14px;left:auto}
-  .gift-ticket-stub{width:auto;border-radius:0 0 10px 10px;padding:2rem;flex-direction:row;justify-content:center;gap:2rem}
+  .gift-ticket-stub{width:auto;border-radius:0 0 10px 10px;padding:2rem;flex-direction:row;justify-content:center;gap:1.5rem}
+  .gift-ticket-qr-cell{height:auto;width:auto}
+  .gift-ticket-qr-cell:first-child{border-bottom:none;border-right:0.5px solid rgba(107,114,96,0.22);padding-right:1.5rem}
 }
 
 /* ── SCHEDULE ────────────────────────────────────── */
@@ -737,47 +739,47 @@ footer em{color:var(--sage-deep)}
       <div class="todo-cards">
         <div class="todo-card">
           <div class="todo-card-num">01</div>
-          <h4data-i18n="todo.tele.title">Mi Teleférico</a></h4>
+          <h4><a href="https://www.miteleferico.bo/" target="_blank" class="rest-name-link" data-i18n="todo.tele.title">Mi Teleférico</a></h4>
           <p data-i18n="todo.tele.body">La red de teleféricos urbanos de La Paz — transporte público con vistas increíbles.</p>
         </div>
         <div class="todo-card">
           <div class="todo-card-num">02</div>
-          <h4data-i18n="todo.brujas.title">Mercado de las Brujas</a></h4>
+          <h4><a href="https://maps.app.goo.gl/oJXfWmsaC5Yautdr7" target="_blank" class="rest-name-link" data-i18n="todo.brujas.title">Mercado de las Brujas</a></h4>
           <p data-i18n="todo.brujas.body">Medicinas aymaras, hierbas y ofrendas rituales en el corazón de la ciudad.</p>
         </div>
         <div class="todo-card">
           <div class="todo-card-num">03</div>
-          <h4data-i18n="todo.luna.title">Valle de la Luna</a></h4>
+          <h4><a href="https://maps.app.goo.gl/valleluna" target="_blank" class="rest-name-link" data-i18n="todo.luna.title">Valle de la Luna</a></h4>
           <p data-i18n="todo.luna.body">A 30 minutos del centro — un paisaje que parece otro planeta.</p>
         </div>
         <div class="todo-card">
           <div class="todo-card-num">04</div>
-          <h4data-i18n="todo.jaen.title">Calle Jaén</a></h4>
+          <h4><a href="https://maps.app.goo.gl/callejaen" target="_blank" class="rest-name-link" data-i18n="todo.jaen.title">Calle Jaén</a></h4>
           <p data-i18n="todo.jaen.body">La calle colonial mejor conservada de La Paz, llena de museos y cafés.</p>
         </div>
         <div class="todo-card">
           <div class="todo-card-num">05</div>
-          <h4data-i18n="todo.sanfran.title">Basílica de San Francisco</a></h4>
+          <h4><a href="https://maps.app.goo.gl/sanfrancisco" target="_blank" class="rest-name-link" data-i18n="todo.sanfran.title">Basílica de San Francisco</a></h4>
           <p data-i18n="todo.sanfran.body">Joya del barroco mestizo boliviano. El tour al techo ofrece vistas espectaculares.</p>
         </div>
         <div class="todo-card">
           <div class="todo-card-num">06</div>
-          <h4data-i18n="todo.cholita.title">Lucha de Cholitas</h4>
+          <h4 data-i18n="todo.cholita.title">Lucha de Cholitas</h4>
           <p data-i18n="todo.cholita.body">Mujeres aymaras en trajes tradicionales realizan combates teatrales. Algo completamente único en el mundo.</p>
         </div>
         <div class="todo-card">
           <div class="todo-card-num">07</div>
-          <h4data-i18n="todo.death.title">Camino de la Muerte</a></h4>
+          <h4><a href="https://www.gravitybolivia.com/viajes/principiantes/el-camino-de-la-muerte/" target="_blank" class="rest-name-link" data-i18n="todo.death.title">Camino de la Muerte</a></h4>
           <p data-i18n="todo.death.body">Una de las rutas de bicicleta más emocionantes del mundo. Desciende de 4.650 m a 1.200 m por bosque nuboso.</p>
         </div>
         <div class="todo-card">
           <div class="todo-card-num">08</div>
-          <h4data-i18n="todo.clandestino.title">Sabor Clandestino</a></h4>
-          <p data-i18n="todo.clandestino.body">Experiencia gastronómica clandestina con los ojos vendados. Diez platos con ingredientes de los 24 microclimas de Bolivia. Completamente única e inolvidable.</p>
+          <h4><a href="https://www.theworlds50best.com/discovery/Establishments/Bolivia/Sopocachi/Sabor-Clandestino.html" target="_blank" class="rest-name-link" data-i18n="todo.clandestino.title">Sabor Clandestino</a></h4>
+          <p data-i18n="todo.clandestino.body">Experiencia gastronómica clandestina con los ojos vendados. Diez platos con ingredientes de los 24 microclimas de Bolivia.</p>
         </div>
         <div class="todo-card">
           <div class="todo-card-num">09</div>
-          <h4data-i18n="todo.huayna.title">Huayna Potosí (6.088 m)</a></h4>
+          <h4><a href="https://www.gravitybolivia.com/custom-trips/destination/la-paz/" target="_blank" class="rest-name-link" data-i18n="todo.huayna.title">Huayna Potosí (6.088 m)</a></h4>
           <p data-i18n="todo.huayna.body">Uno de los seismiles más accesibles del mundo. A solo una hora de La Paz, ideal para principiantes con guía certificado.</p>
         </div>
       </div>
@@ -815,7 +817,7 @@ footer em{color:var(--sage-deep)}
           <span class="todo-rest-tag">★ Top pick</span>
         </div>
         <div class="todo-rest-row">
-          <div><div class="todo-rest-name"><a href="https://maps.app.goo.gl/PopularLaPaz" target="_blank">Popular</a></div><div class="todo-rest-desc" data-i18n="rest.popular">Comida boliviana auténtica y accesible. Imprescindible.</div></div>
+          <div><div class="todo-rest-name"><a href="https://maps.app.goo.gl/PopularLaPaz" target="_blank">Popular</a></div><div class="todo-rest-desc" data-i18n="rest.popular">Comida boliviana auténtica y accesible.</div></div>
           <span class="todo-rest-tag">★ Top pick</span>
         </div>
         <div class="todo-rest-row">
@@ -929,16 +931,14 @@ footer em{color:var(--sage-deep)}
       <div class="gift-ticket-perf"></div>
       <div class="gift-ticket-stub">
         <div class="gift-ticket-qr-cell">
-          <span class="gift-ticket-qr-label">Zelle</span>
           <div class="gift-ticket-qr-placeholder" id="zelle-qr-placeholder">
             <span data-i18n="qr.upload">Añadir QR</span>
             <input type="file" accept="image/*" onchange="loadZelleQR(this)"/>
           </div>
         </div>
         <div class="gift-ticket-qr-cell">
-          <span class="gift-ticket-qr-label">BCP</span>
           <div class="gift-ticket-qr-box">
-            <img src="https://i.postimg.cc/tZX4hFdt/IMG-4925-2.jpg" alt="Código QR BCP para transferencia bancaria" loading="lazy" style="width:108px;height:auto;display:block;border-radius:2px"/>
+            <img src="https://i.postimg.cc/tZX4hFdt/IMG-4925-2.jpg" alt="Código QR BCP para transferencia bancaria" loading="lazy" style="width:88px;height:auto;display:block;border-radius:2px"/>
           </div>
         </div>
       </div>
@@ -1032,7 +1032,7 @@ es:{
   'todo.sanfran.title':'Basílica de San Francisco','todo.sanfran.body':'Joya del barroco mestizo boliviano. El tour al techo ofrece vistas espectaculares.',
   'todo.cholita.title':'Lucha de Cholitas','todo.cholita.body':'Mujeres aymaras en trajes tradicionales realizan combates teatrales. Algo completamente único en el mundo.',
   'todo.death.title':'Camino de la Muerte','todo.death.body':'Una de las rutas de bicicleta más emocionantes del mundo. Desciende de 4.650 m a 1.200 m por bosque nuboso.',
-  'todo.clandestino.title':'Sabor Clandestino','todo.clandestino.body':'Experiencia gastronómica clandestina con los ojos vendados. Diez platos con ingredientes de los 24 microclimas de Bolivia. Completamente única e inolvidable.',
+  'todo.clandestino.title':'Sabor Clandestino','todo.clandestino.body':'Experiencia gastronómica clandestina con los ojos vendados. Diez platos con ingredientes de los 24 microclimas de Bolivia.',
   'todo.huayna.title':'Huayna Potosí (6.088 m)','todo.huayna.body':'Uno de los seismiles más accesibles del mundo. A solo una hora de La Paz, ideal para principiantes con guía certificado.',
   'todo.austria.title':'Pico Austria (5.350 m)','todo.austria.body':'Trekking de un día desde La Paz con vistas a la Cordillera Real y el lago Condoriri. Perfecto para aclimatarse.',
   'todo.tours.title':'Tours y aventuras','todo.tours.body':'Para tours guiados por La Paz y alrededores, trekking, ciclismo y más, recomendamos <a href="https://www.gravitybolivia.com/custom-trips/destination/la-paz/" target="_blank" style="color:var(--sage-deep);text-decoration:none;border-bottom:0.5px solid rgba(107,114,96,0.35)">Gravity Bolivia</a>.',
@@ -1043,7 +1043,7 @@ es:{
   'rest.ancestral':'Cocina boliviana contemporánea con ingredientes locales de alta calidad.',
   'rest.chenko':'Ambiente moderno con platos creativos y excelente carta de cócteles.',
   'rest.vagon':'Parrilla argentina en ambiente relajado. Ideal para grupos.',
-  'rest.popular':'Comida boliviana auténtica y accesible. Imprescindible.',
+  'rest.popular':'Comida boliviana auténtica y accesible.',
   'rest.tinto':'Wine bar con cocina sofisticada y ambiente íntimo en Zona Sur.',
   'rest.pacena':'El mejor lugar para desayunar salteñas. ¡No pueden irse de La Paz sin probar una salteña! Reto salteñero: el que derrame el jugo paga la siguiente ronda.',
   'todo.coffee.intro':'A ambos nos encanta el café — estos son nuestros lugares preferidos',
