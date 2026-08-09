@@ -254,20 +254,26 @@ nav{position:sticky;top:0;z-index:100;background:rgba(250,249,246,0.97);backdrop
 /* ── FAQ ─────────────────────────────────────────── */
 #faq-container{display:grid;grid-template-columns:0.9fr 1.3fr;background:rgba(255,255,255,0.75);border:1px solid rgba(107,114,96,0.16);border-radius:10px;box-shadow:0 20px 46px -30px rgba(42,36,32,0.3);overflow:hidden;min-height:340px}
 .faq-nav{border-right:1px solid rgba(42,36,32,0.16);display:flex;flex-direction:column;padding:0.5rem 0}
+.faq-item{display:contents}
 .faq-nav-item{width:100%;text-align:left;background:none;border:none;border-left:3px solid transparent;padding:1rem 1.5rem;font-family:var(--display);font-size:16px;line-height:1.4;color:var(--mid);cursor:pointer;transition:background 0.2s,color 0.2s,border-color 0.2s}
 .faq-nav-item:hover{color:var(--dark)}
 .faq-nav-item.active{background:var(--sage-pale);border-left-color:var(--sage-deep);color:var(--sage-deep);font-weight:500}
+.faq-mobile-answer{display:none}
 .faq-panel{padding:2.75rem}
-.faq-panel-eyebrow{font-family:var(--sc);font-size:12px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage-deep);margin-bottom:0.85rem}
 .faq-panel-q{font-family:var(--display);font-size:26px;font-weight:400;color:var(--dark);margin-bottom:1.1rem;line-height:1.25}
 .faq-panel-a{font-size:16px;color:var(--mid);line-height:1.85}
 @media(max-width:720px){
   #faq-container{grid-template-columns:1fr;min-height:0}
-  .faq-nav{flex-direction:row;overflow-x:auto;border-right:none;border-bottom:1px solid rgba(42,36,32,0.16);padding:0;-webkit-overflow-scrolling:touch}
-  .faq-nav-item{white-space:nowrap;border-left:none;border-bottom:3px solid transparent;padding:1rem 1.1rem;font-size:14px}
-  .faq-nav-item.active{border-left-color:transparent;border-bottom-color:var(--sage-deep)}
-  .faq-panel{padding:1.75rem}
-  .faq-panel-q{font-size:21px}
+  .faq-nav{flex-direction:column;overflow-x:visible;border-right:none;padding:0}
+  .faq-item{display:block;border-bottom:1px solid rgba(42,36,32,0.16)}
+  .faq-item:last-child{border-bottom:none}
+  .faq-nav-item{white-space:normal;border-left:none;border-bottom:none;padding:1.15rem 1.25rem;font-size:15.5px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  .faq-nav-item.active{border-left-color:transparent;background:none;color:var(--sage-deep)}
+  .faq-nav-item::after{content:'+';font-family:var(--sans);font-size:18px;font-weight:300;color:var(--muted);flex-shrink:0;transition:transform 0.2s}
+  .faq-nav-item.active::after{content:'−';color:var(--sage-deep)}
+  .faq-mobile-answer{padding:0 1.25rem 1.15rem;font-size:15px;color:var(--mid);line-height:1.75}
+  .faq-mobile-answer.active{display:block}
+  .faq-panel{display:none}
 }
 
 /* ── STORY ───────────────────────────────────────── */
@@ -1124,7 +1130,7 @@ es:{
   'away.titicaca.tiwanaku':'El Lago Titicaca es el lago navegable más alto del mundo (3,812 m.s.n.m.) y el más grande de Sudamérica, compartido entre Perú y Bolivia. La Isla del Sol es la isla más grande del lago y es considerada el lugar de origen sagrado del Imperio Inca.',
   'away.coroico':'Se desciende de gran altitud a selva tropical en poco tiempo. Coroico es un buen lugar para descansar en un clima cálido y verde.',
   'link.book.tour':'Reservar tour →',
-  'faq.title':'Preguntas','faq.panel.eyebrow':'Pregunta frecuente','faq.contact.title':'¿Tienes más preguntas?','faq.contact.body':'Estamos aca para lo que necesiten, nos pueden escribir directamente por Whatsapp.',
+  'faq.title':'Preguntas','faq.contact.title':'¿Tienes más preguntas?','faq.contact.body':'Estamos aca para lo que necesiten, nos pueden escribir directamente por Whatsapp.',
   'story.eyebrow':'Dani & Jimmy','story.main.title':'Nuestra Historia',
   'story.intro':'Una historia que comenzó en un bote en Miami, pasó por las calles de Nueva York y llegó hasta las montañas de Bolivia. Esta es la nuestra.',
   'story.y1':'Julio 2020 · Miami','story.e1.title':'La primera vez que nos conocimos','story.e1.body':'Nos conocimos oficialmente por primera vez en Miami durante el fin de semana del 4 de Julio en un boat party.',
@@ -1207,7 +1213,7 @@ en:{
   'away.titicaca.tiwanaku':'Lake Titicaca is the highest navigable lake in the world (3,812 m.a.s.l.) and the largest in South America, shared between Peru and Bolivia. Isla del Sol, located on the Bolivian side, is the largest island in the lake and is considered the sacred birthplace of the Inca Empire.',
   'away.coroico':'You descend from high altitude to tropical jungle in a short time. Coroico is a good place to relax in a warm, green climate.',
   'link.book.tour':'Book tour →',
-  'faq.title':'Questions','faq.panel.eyebrow':'Frequently asked','faq.contact.title':'Still have questions?','faq.contact.body':'We are here for whatever you need — feel free to reach out to us directly on WhatsApp.',
+  'faq.title':'Questions','faq.contact.title':'Still have questions?','faq.contact.body':'We are here for whatever you need — feel free to reach out to us directly on WhatsApp.',
   'story.eyebrow':'Dani & Jimmy','story.main.title':'Our Story',
   'story.intro':'A story that started on a boat in Miami, wound through the streets of New York, and found its way back to the mountains of Bolivia. This is ours.',
   'story.y1':'July 2020 · Miami','story.e1.title':'The first time we met','story.e1.body':'We officially met for the first time in Miami over the Fourth of July weekend, at a boat party.',
@@ -1230,7 +1236,7 @@ en:{
 const faqs={
 es:[
   {q:'¿Cuál es el código de vestimenta?',a:'El código de vestimenta es traje formal (black tie optional) para hombres y vestido largo para mujeres. En esta época del año, el clima en La Paz es cálido durante el día y fresco durante la noche, por lo cual les recomendamos traer un abrigo, una chaqueta formal, o una estola abrigada para la noche. Dado que parte de la fiesta se celebrará sobre césped (pasto), se recomienda usar zapatos con tacón grueso o plataformas.'},
-  {q:'¿Se permiten niños en la boda?',a:'Los niños son bienvenidos únicamente si están explícitamente incluidos en la invitación.'},
+  {q:'¿Se permiten niños en la boda?',a:'Los niños son bienvenidos únicamente si están incluidos en la invitación.'},
   {q:'¿Qué debo saber sobre la altura en La Paz?',a:'Como La Paz está a casi 3.640 metros de altura, es normal que se sientan cansados, con dolor de cabeza o les falte el aire el primer día o dos. Para que disfruten al máximo, les recomendamos llegar un par de días antes de la boda. Si les pega un poco el "sorojchi" (mal de altura), un buen té de coca, unas pastillas "Sorojchi pill" o "Sorojchi Muña" de la farmacia los ayudarán muchísimo. ¡Porfa nos avisan cualquier cosa!'},
   {q:'¿Cómo llego del aeropuerto a mi hotel o airbnb?',a:'El Aeropuerto Internacional El Alto (LPB) está a unos 45–60 minutos de la zona sur. Recomendamos tomar un taxi del aeropuerto. Uber e InDrive no son opciones muy factibles en esa parte de la ciudad.'},
   {q:'¿Cómo llegar a la iglesia y al club de golf?',a:'Para quienes deseen asistir a la ceremonia religiosa en la iglesia, habrá buses disponibles que saldrán desde la Plaza Humboldt a las 15:45. Una vez concluida la ceremonia, habrá buses disponibles que los transportarán directamente al Club de Golf, donde se realizarán el cóctel y la cena de recepción. Para quienes no puedan asistir a la ceremonia religiosa, la forma más fácil de llegar al Club de Golf es vía Uber o taxi.'},
@@ -1361,16 +1367,27 @@ function buildFAQ(){
   const container=document.getElementById('faq-container');
   const items=faqs[currentLang]||faqs.es;
   if(faqActiveIndex>=items.length) faqActiveIndex=0;
-  const nav=items.map((item,i)=>`<button class="faq-nav-item${i===faqActiveIndex?' active':''}" onclick="showFAQAnswer(${i},this)">${item.q}</button>`).join('');
-  container.innerHTML=`<div class="faq-nav">${nav}</div><div class="faq-panel"><div class="faq-panel-eyebrow">${t('faq.panel.eyebrow')}</div><div class="faq-panel-q">${items[faqActiveIndex].q}</div><div class="faq-panel-a">${items[faqActiveIndex].a}</div></div>`;
+  const nav=items.map((item,i)=>`<div class="faq-item"><button class="faq-nav-item${i===faqActiveIndex?' active':''}" onclick="showFAQAnswer(${i},this)">${item.q}</button><div class="faq-mobile-answer${i===faqActiveIndex?' active':''}">${item.a}</div></div>`).join('');
+  container.innerHTML=`<div class="faq-nav">${nav}</div><div class="faq-panel"><div class="faq-panel-q">${items[faqActiveIndex].q}</div><div class="faq-panel-a">${items[faqActiveIndex].a}</div></div>`;
 }
 function showFAQAnswer(i,btn){
-  faqActiveIndex=i;
   const items=faqs[currentLang]||faqs.es;
+  const isMobile=window.innerWidth<=720;
+  const wasActive=btn.classList.contains('active');
+  if(isMobile&&wasActive){
+    faqActiveIndex=-1;
+    document.querySelectorAll('.faq-nav-item').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.faq-mobile-answer').forEach(a=>a.classList.remove('active'));
+    return;
+  }
+  faqActiveIndex=i;
   document.querySelectorAll('.faq-nav-item').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.faq-mobile-answer').forEach(a=>a.classList.remove('active'));
   btn.classList.add('active');
-  document.querySelector('.faq-panel-q').textContent=items[i].q;
-  document.querySelector('.faq-panel-a').textContent=items[i].a;
+  btn.nextElementSibling.classList.add('active');
+  const panelQ=document.querySelector('.faq-panel-q');
+  const panelA=document.querySelector('.faq-panel-a');
+  if(panelQ&&panelA){panelQ.textContent=items[i].q;panelA.textContent=items[i].a;}
 }
 
 function loadInvitePhoto(input){
