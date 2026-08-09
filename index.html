@@ -119,6 +119,18 @@ nav{position:sticky;top:0;z-index:100;background:rgba(250,249,246,0.97);backdrop
   .gift-ticket-qr-cell{height:auto;width:auto}
   .gift-ticket-qr-divider{width:0.5px;height:70px}
 }
+.fund-section{margin-top:3.5rem;max-width:900px;margin-left:auto;margin-right:auto}
+.fund-section-title{font-family:var(--display);font-size:26px;font-weight:400;color:var(--dark);margin-bottom:0.6rem;text-align:center}
+.fund-section-intro{font-family:var(--display);font-size:16px;color:var(--mid);text-align:center;max-width:520px;margin:0 auto 2.25rem;line-height:1.8}
+.fund-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem}
+.fund-card{background:rgba(255,255,255,0.85);border:0.5px solid var(--border-soft);border-top:2px solid var(--sage-deep);border-radius:0 6px 6px 6px;padding:1.75rem;box-shadow:0 10px 24px -20px rgba(42,36,32,0.25);display:flex;flex-direction:column}
+.fund-card-num{font-family:var(--sc);font-size:12px;font-weight:500;letter-spacing:0.2em;color:var(--sage-deep);margin-bottom:0.6rem;display:block}
+.fund-card-title{font-family:var(--display);font-size:19px;font-weight:400;color:var(--dark);margin-bottom:0.5rem}
+.fund-card-desc{font-size:14.5px;color:var(--mid);line-height:1.65;margin-bottom:1.1rem;flex:1}
+.fund-card-memo{font-family:var(--sans);font-size:11.5px;color:var(--muted);line-height:1.6;padding:0.75rem;background:rgba(107,114,96,0.06);border-radius:4px;margin-bottom:1.1rem}
+.fund-card-memo strong{color:var(--sage-deep);font-weight:600}
+.fund-card-note-link{font-family:var(--sans);font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--sage-deep);text-decoration:none;border-bottom:0.5px solid rgba(107,114,96,0.4);align-self:flex-start}
+.fund-card-note-link:hover{border-bottom-color:var(--sage-deep)}
 
 /* ── SCHEDULE ────────────────────────────────────── */
 .sched-timeline{max-width:700px;margin:0 auto;padding:1.5rem 2rem 5rem;position:relative}
@@ -947,6 +959,48 @@ footer em{color:var(--sage-deep)}
       </div>
     </div>
     <p class="fade-in" style="margin-top:1.25rem;text-align:center;font-family:var(--sans);font-size:12px;letter-spacing:0.06em;color:var(--muted)" data-i18n="reg.qr.tap">Toca cualquier código QR para ampliarlo y descargarlo</p>
+
+    <div class="fund-section">
+      <h3 class="fund-section-title fade-in" data-i18n="fund.section.title"></h3>
+      <p class="fund-section-intro fade-in" data-i18n="fund.section.intro"></p>
+      <div class="fund-grid">
+      <div class="fund-card fade-in">
+        <span class="fund-card-num">I</span>
+        <h4 class="fund-card-title" data-i18n="fund.honeymoon.title"></h4>
+        <p class="fund-card-desc" data-i18n="fund.honeymoon.desc"></p>
+        <p class="fund-card-memo" data-i18n="fund.honeymoon.memo"></p>
+        <a class="fund-card-note-link" href="mailto:dbohrta@gmail.com?subject=Regalo%20-%20Honeymoon%20Fund&body=Hola%20Dani%20y%20Jimmy%2C%0D%0A%0D%0A" data-i18n="fund.note.link"></a>
+      </div>
+      <div class="fund-card fade-in">
+        <span class="fund-card-num">II</span>
+        <h4 class="fund-card-title" data-i18n="fund.home.title"></h4>
+        <p class="fund-card-desc" data-i18n="fund.home.desc"></p>
+        <p class="fund-card-memo" data-i18n="fund.home.memo"></p>
+        <a class="fund-card-note-link" href="mailto:dbohrta@gmail.com?subject=Regalo%20-%20New%20Home%20Fund&body=Hola%20Dani%20y%20Jimmy%2C%0D%0A%0D%0A" data-i18n="fund.note.link"></a>
+      </div>
+      <div class="fund-card fade-in">
+        <span class="fund-card-num">III</span>
+        <h4 class="fund-card-title" data-i18n="fund.furniture.title"></h4>
+        <p class="fund-card-desc" data-i18n="fund.furniture.desc"></p>
+        <p class="fund-card-memo" data-i18n="fund.furniture.memo"></p>
+        <a class="fund-card-note-link" href="mailto:dbohrta@gmail.com?subject=Regalo%20-%20Furniture%20Fund&body=Hola%20Dani%20y%20Jimmy%2C%0D%0A%0D%0A" data-i18n="fund.note.link"></a>
+      </div>
+      <div class="fund-card fade-in">
+        <span class="fund-card-num">IV</span>
+        <h4 class="fund-card-title" data-i18n="fund.datenight.title"></h4>
+        <p class="fund-card-desc" data-i18n="fund.datenight.desc"></p>
+        <p class="fund-card-memo" data-i18n="fund.datenight.memo"></p>
+        <a class="fund-card-note-link" href="mailto:dbohrta@gmail.com?subject=Regalo%20-%20Date%20Night%20Fund&body=Hola%20Dani%20y%20Jimmy%2C%0D%0A%0D%0A" data-i18n="fund.note.link"></a>
+      </div>
+      <div class="fund-card fade-in">
+        <span class="fund-card-num">V</span>
+        <h4 class="fund-card-title" data-i18n="fund.charity.title"></h4>
+        <p class="fund-card-desc" data-i18n="fund.charity.desc"></p>
+        <p class="fund-card-memo" data-i18n="fund.charity.memo"></p>
+        <a class="fund-card-note-link" href="mailto:dbohrta@gmail.com?subject=Regalo%20-%20Charity%20Fund&body=Hola%20Dani%20y%20Jimmy%2C%0D%0A%0D%0A" data-i18n="fund.note.link"></a>
+      </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -1014,6 +1068,13 @@ es:{
   'reg.zelle.desc':'Envía un regalo directamente vía Zelle','reg.zelle.info':'dbohrta@gmail.com · 5743400755',
   'reg.qr.title':'BCP','reg.qr.desc':'Transferencia directa a nuestra cuenta en Bolivia','reg.qr.info':'[Número de cuenta · Banco]',
   'reg.copy':'Copiar','reg.copied':'¡Copiado!','reg.qr.tap':'Toca cualquier código QR para ampliarlo y descargarlo','qr.download':'Descargar',
+  'fund.section.title':'Fondos especiales','fund.section.intro':'Si prefieren contribuir a algo más específico, aquí tienen algunas opciones. Usen el mismo Zelle o QR de arriba e incluyan el nombre del fondo en la nota, o déjennos un mensaje directamente.',
+  'fund.honeymoon.title':'Fondo de Luna de Miel','fund.honeymoon.desc':'Ayúdanos a crear recuerdos inolvidables en nuestra luna de miel.','fund.honeymoon.memo':'Incluye <strong>"Luna de Miel"</strong> en la nota de tu Zelle o transferencia.',
+  'fund.home.title':'Fondo para Nuestro Nuevo Hogar','fund.home.desc':'Contribuye a que nuestro primer hogar juntos se sienta como en casa.','fund.home.memo':'Incluye <strong>"Nuevo Hogar"</strong> en la nota de tu Zelle o transferencia.',
+  'fund.furniture.title':'Fondo de Muebles','fund.furniture.desc':'Ayúdanos a amueblar nuestro nuevo espacio.','fund.furniture.memo':'Incluye <strong>"Muebles"</strong> en la nota de tu Zelle o transferencia.',
+  'fund.datenight.title':'Fondo de Noche de Citas','fund.datenight.desc':'Para seguir teniendo citas especiales después de la boda.','fund.datenight.memo':'Incluye <strong>"Noche de Citas"</strong> en la nota de tu Zelle o transferencia.',
+  'fund.charity.title':'Donación a Caridad','fund.charity.desc':'Si prefieren, pueden hacer una donación a una causa que nos importa en lugar de un regalo.','fund.charity.memo':'Incluye <strong>"Caridad"</strong> en la nota de tu Zelle o transferencia.',
+  'fund.note.link':'Dejar una nota →',
   'sched.eyebrow':'Sábado, 19 de Diciembre de 2026','sched.program.title':'Programación',
   'sched.1.title':'Ceremonia religiosa','sched.2.title':'Cóctel de recepción','sched.3.title':'Cena de recepción',
   'sched.transport.title':'Transporte','sched.transport.body':'Para los que necesiten, habrán buses disponibles desde la Plaza Humboldt hasta la parroquia, y de la parroquia al Club de Golf La Paz. Al acabar la fiesta, habrán taxis disponibles a pedido desde el Club de Golf.','sched.dresscode.title':'Código de vestimenta','sched.dresscode.body':'Formal / Black tie optional',
@@ -1096,6 +1157,13 @@ en:{
   'reg.zelle.desc':'Send a gift directly via Zelle','reg.zelle.info':'dbohrta@gmail.com · 5743400755',
   'reg.qr.title':'BCP','reg.qr.desc':'Direct transfer to our Bolivian bank account','reg.qr.info':'[Account number · Bank]',
   'reg.copy':'Copy','reg.copied':'Copied!','reg.qr.tap':'Tap any QR code to enlarge and download it','qr.download':'Download',
+  'fund.section.title':'Special Funds','fund.section.intro':'If you\'d rather contribute to something specific, here are a few options. Use the same Zelle or QR above and include the fund name in the note, or leave us a message directly.',
+  'fund.honeymoon.title':'Honeymoon Fund','fund.honeymoon.desc':'Help us create unforgettable memories on our honeymoon.','fund.honeymoon.memo':'Include <strong>"Honeymoon"</strong> in the note of your Zelle or transfer.',
+  'fund.home.title':'New Home Fund','fund.home.desc':'Help our first home together feel like home.','fund.home.memo':'Include <strong>"New Home"</strong> in the note of your Zelle or transfer.',
+  'fund.furniture.title':'Furniture Fund','fund.furniture.desc':'Help us furnish our new space.','fund.furniture.memo':'Include <strong>"Furniture"</strong> in the note of your Zelle or transfer.',
+  'fund.datenight.title':'Date Night Fund','fund.datenight.desc':'To keep having special dates after the wedding.','fund.datenight.memo':'Include <strong>"Date Night"</strong> in the note of your Zelle or transfer.',
+  'fund.charity.title':'Charity Donation','fund.charity.desc':'If you\'d prefer, you can make a donation to a cause we care about instead of a gift.','fund.charity.memo':'Include <strong>"Charity"</strong> in the note of your Zelle or transfer.',
+  'fund.note.link':'Leave a note →',
   'sched.eyebrow':'Saturday, December 19, 2026','sched.program.title':'Program',
   'sched.1.title':'Religious ceremony','sched.2.title':'Reception cocktail','sched.3.title':'Reception dinner',
   'sched.transport.title':'Transportation','sched.transport.body':'Transportation will be available from Plaza Humboldt to the church, and from the church to Club de Golf La Paz. At the end of the evening, taxis will be available upon request from the Golf Club.','sched.dresscode.title':'Dress code','sched.dresscode.body':'Formal / Black tie optional',
