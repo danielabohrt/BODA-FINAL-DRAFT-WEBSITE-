@@ -459,22 +459,6 @@ footer em{color:var(--sage-deep)}
 .travel-hero-label{font-family:var(--sans);font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted)}
 @media(max-width:640px){.travel-hero-photo{height:220px}}
 
-/* ── STORY (simple list of places) ──────────── */
-.story-list{max-width:480px;margin:3rem auto 0;display:flex;flex-direction:column}
-.story-list-item{display:flex;align-items:baseline;gap:1.5rem;padding:1.15rem 0;border-bottom:1px solid rgba(42,36,32,0.14)}
-.story-list-item:last-child{border-bottom:none}
-.story-list-num{font-family:var(--sc);font-size:12px;font-weight:500;letter-spacing:0.14em;color:var(--sage-deep);flex-shrink:0}
-.story-list-text{font-family:var(--display);font-size:21px;color:var(--dark)}
-.story-finale{max-width:560px;margin:3rem auto 3.5rem;padding:2.75rem 2.5rem;text-align:center;background:linear-gradient(165deg,var(--sage-pale) 0%,#fff 100%);border:1px solid rgba(107,114,96,0.22);border-radius:14px;box-shadow:0 26px 56px -30px rgba(42,36,32,0.32)}
-.story-finale-icon{font-size:22px;color:var(--sage-deep);margin-bottom:1rem}
-.story-finale-title{font-family:var(--display);font-size:28px;font-weight:500;color:var(--dark);margin-bottom:0.85rem;line-height:1.2}
-.story-finale-body{font-size:16px;color:var(--mid);line-height:1.85;font-weight:300;max-width:440px;margin:0 auto}
-@media(max-width:720px){
-  .story-list{margin-top:2rem;padding:0 1.25rem}
-  .story-list-text{font-size:18px}
-  .story-finale{padding:2.25rem 1.5rem;margin:2rem 1rem 2.5rem}
-  .story-finale-title{font-size:22px}
-}
 </style>
 </head>
 <body>
@@ -486,7 +470,6 @@ footer em{color:var(--sage-deep)}
     <li><button onclick="showPage('home')" class="active" id="nav-home" data-i18n="nav.home">Inicio</button></li>
     <li><button onclick="showPage('travel')" id="nav-travel" data-i18n="nav.travel">Cómo llegar</button></li>
     <li><button onclick="showPage('todo')" id="nav-todo" data-i18n="nav.todo">Qué hacer</button></li>
-    <li><button onclick="showPage('story')" id="nav-story" data-i18n="nav.story">Nuestra historia</button></li>
     <li><button onclick="showPage('gifts')" id="nav-gifts" data-i18n="nav.gifts">Sugerencias de regalo</button></li>
     <li><button onclick="showPage('faq')" id="nav-faq" data-i18n="nav.faq">Preguntas</button></li>
     <li><button onclick="promptPassword()" id="nav-dashboard" style="display:none">● Dashboard</button></li>
@@ -574,29 +557,6 @@ footer em{color:var(--sage-deep)}
   </div>
   </div>
 
-</div>
-
-<!-- ══════════ OUR STORY ══════════ -->
-<div id="page-story" class="page" style="background:radial-gradient(circle at 12% 0%,rgba(107,114,96,0.12) 0%,transparent 42%),radial-gradient(circle at 92% 95%,rgba(166,137,104,0.09) 0%,transparent 48%),linear-gradient(160deg,var(--white) 0%,#e8dfd4 45%,#f0e8dd 75%,#f5f0e8 100%)">
-  <div class="section" style="padding-bottom:0;text-align:center;max-width:800px">
-    <h2 class="section-title fade-in"><em data-i18n="story.main.title">Nuestra Historia</em></h2>
-  </div>
-
-  <div class="story-list">
-    <div class="story-list-item fade-in"><span class="story-list-num">01</span><span class="story-list-text" data-i18n="story.y1">Julio 2020 · Miami</span></div>
-    <div class="story-list-item fade-in"><span class="story-list-num">02</span><span class="story-list-text" data-i18n="story.y2">Enero 2022 · La Paz</span></div>
-    <div class="story-list-item fade-in"><span class="story-list-num">03</span><span class="story-list-text" data-i18n="story.y3">Febrero 2022 · Nueva York</span></div>
-    <div class="story-list-item fade-in"><span class="story-list-num">04</span><span class="story-list-text" data-i18n="story.y4">Junio 2023 · Charlotte</span></div>
-    <div class="story-list-item fade-in"><span class="story-list-num">05</span><span class="story-list-text" data-i18n="story.y5.proposal">Septiembre 2025 · La Paz</span></div>
-    <div class="story-list-item fade-in"><span class="story-list-num">06</span><span class="story-list-text" data-i18n="story.y5">Diciembre 2025 · Charlotte</span></div>
-    <div class="story-list-item fade-in"><span class="story-list-num">07</span><span class="story-list-text" data-i18n="story.y6">Diciembre 2026 · La Paz</span></div>
-  </div>
-
-  <div class="story-finale fade-in">
-    <div class="story-finale-icon">❦</div>
-    <h3 class="story-finale-title" data-i18n="story.e6.title">¡Nos casamos!</h3>
-    <p class="story-finale-body" data-i18n="story.e6.body">Gracias por acompañarnos a celebrar en La Paz, la ciudad donde ambos nacimos y crecimos. ¡No vemos la hora de compartir este fin de semana con todos ustedes!</p>
-  </div>
 </div>
 
 <!-- ══════════ TRAVEL ══════════ -->
@@ -914,7 +874,7 @@ let dashboardUnlocked=false;
 
 const i18n={
 es:{
-  'nav.home':'Inicio','nav.schedule':'Programa','nav.travel':'Viaje','nav.todo':'Qué hacer','nav.story':'Nuestra historia','nav.gifts':'Sugerencias de regalo','nav.faq':'Preguntas',
+  'nav.home':'Inicio','nav.schedule':'Programa','nav.travel':'Viaje','nav.todo':'Qué hacer','nav.gifts':'Sugerencias de regalo','nav.faq':'Preguntas',
   'home.eyebrow':'19 de Diciembre de 2026','home.together':'Juntos con sus familias','home.personal':'¡Estamos muy felices de compartir este momento tan especial con ustedes!','home.location':'La Paz, Bolivia','home.upload':'Haz clic para añadir la invitación',
   'home.reg.eyebrow':'Sugerencias de regalo','home.reg.title':'Sugerencias de regalo','home.reg.intro':'Su presencia en nuestra boda es nuestro mejor regalo, pero si desean darnos un regalo adicional les facilitamos los siguientes medios.',
   'reg.honey.title':'Fondo de luna de miel','reg.honey.desc':'Contribuye a nuestra primera aventura como esposos','reg.honey.link':'Contribuir →',
@@ -962,14 +922,6 @@ es:{
   'away.coroico':'Se desciende de gran altitud a selva tropical en poco tiempo. Coroico es un buen lugar para descansar en un clima cálido y verde.',
   'link.book.tour':'Reservar tour →','link.hotel.coroico':'Hotel recomendado en Coroico →',
   'faq.title':'Preguntas','faq.contact.title':'¿Tienes más preguntas?','faq.contact.body':'Estamos aca para lo que necesiten, nos pueden escribir directamente por Whatsapp.',
-  'story.main.title':'Nuestra Historia',
-  'story.y1':'Julio 2020 · Miami',
-  'story.y2':'Enero 2022 · La Paz',
-  'story.y3':'Febrero 2022 · Nueva York',
-  'story.y4':'Junio 2023 · Charlotte',
-  'story.y5.proposal':'Septiembre 2025 · La Paz',
-  'story.y5':'Diciembre 2025 · Charlotte',
-  'story.y6':'Diciembre 2026 · La Paz','story.e6.title':'¡Nos casamos!','story.e6.body':'Gracias por acompañarnos a celebrar en La Paz, la ciudad donde ambos nacimos y crecimos. ¡No vemos la hora de compartir este fin de semana con todos ustedes!',
   'pw.title':'Área privada','pw.sub':'Ingresa la contraseña para acceder al panel.','pw.btn':'Entrar','pw.err':'Contraseña incorrecta.',
   'dash.total':'Total','dash.attending':'Asistirán','dash.guests':'Invitados','dash.declined.lbl':'Declinaron',
   'dash.export':'Exportar CSV','dash.clear':'Borrar todo','dash.logout':'Cerrar sesión',
@@ -978,7 +930,7 @@ es:{
   'dash.empty':'Aún no hay respuestas.',
 },
 en:{
-  'nav.home':'Home','nav.schedule':'Schedule','nav.travel':'Travel','nav.todo':'Things to do','nav.story':'Our story','nav.gifts':'Gift Registry','nav.faq':'FAQ',
+  'nav.home':'Home','nav.schedule':'Schedule','nav.travel':'Travel','nav.todo':'Things to do','nav.gifts':'Gift Registry','nav.faq':'FAQ',
   'home.eyebrow':'December 19, 2026','home.together':'Together with their families','home.personal':'We are very happy to share this special moment with you!','home.location':'La Paz, Bolivia','home.upload':'Click to add invitation photo',
   'home.reg.eyebrow':'Gift suggestions','home.reg.title':'Gift suggestions','home.reg.intro':'Your presence at our wedding is our greatest gift, but if you would like to give us something more, here are a few ways to do so.',
   'reg.honey.title':'Honeymoon fund','reg.honey.desc':'Contribute to our first adventure as a married couple','reg.honey.link':'Contribute →',
@@ -1026,14 +978,6 @@ en:{
   'away.coroico':'You descend from high altitude to tropical jungle in a short time. Coroico is a good place to relax in a warm, green climate.',
   'link.book.tour':'Book tour →','link.hotel.coroico':'Recommended Hotel in Coroico →',
   'faq.title':'Questions','faq.contact.title':'Still have questions?','faq.contact.body':'We are here for whatever you need — feel free to reach out to us directly on WhatsApp.',
-  'story.main.title':'Our Story',
-  'story.y1':'July 2020 · Miami',
-  'story.y2':'January 2022 · La Paz',
-  'story.y3':'February 2022 · New York',
-  'story.y4':'July 2023 · Charlotte',
-  'story.y5.proposal':'September 2025 · La Paz',
-  'story.y5':'December 2025 · Charlotte',
-  'story.y6':'December 2026 · La Paz','story.e6.title':'We\'re getting married!','story.e6.body':'Thank you for celebrating with us in La Paz, the city where we were both born and raised. We can\'t wait to share this weekend with all of you!',
   'pw.title':'Private area','pw.sub':'Enter the password to access the dashboard.','pw.btn':'Enter','pw.err':'Incorrect password.',
   'dash.total':'Total','dash.attending':'Attending','dash.guests':'Guests','dash.declined.lbl':'Declined',
   'dash.export':'Export CSV','dash.clear':'Clear all','dash.logout':'Lock dashboard',
