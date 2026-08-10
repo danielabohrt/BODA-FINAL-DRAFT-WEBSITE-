@@ -99,9 +99,9 @@ nav{position:sticky;top:0;z-index:100;background:rgba(250,249,246,0.97);backdrop
 .gift-ticket-perf::after{bottom:-14px}
 .gift-ticket-stub{grid-row:1/3;grid-column:3;display:grid;grid-template-rows:subgrid;background:var(--sage-pale);border-radius:0 12px 12px 0;padding:2.5rem 1.5rem;text-align:center}
 .gift-ticket-qr-cell{width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem}
-.gift-ticket-qr-cell:first-child{border-bottom:0.5px solid rgba(42,36,32,0.22);justify-content:flex-start;padding-top:0.5rem}
+.gift-ticket-qr-cell:first-child{border-bottom:0.5px solid rgba(42,36,32,0.22);justify-content:flex-start;padding-top:0.25rem}
 .gift-ticket-qr-label{font-family:var(--sc);font-size:12px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--sage-deep)}
-.gift-ticket-qr-cell:first-child .gift-ticket-qr-label{position:relative;left:14px}
+.gift-ticket-qr-cell:first-child .gift-ticket-qr-box{margin-bottom:1.5rem}
 .gift-ticket-qr-box{background:#fff;padding:6px;border-radius:6px;box-shadow:0 10px 24px -20px rgba(42,36,32,0.3);cursor:pointer;transition:box-shadow 0.2s,transform 0.2s}
 .gift-ticket-qr-box:hover{box-shadow:0 14px 30px -18px rgba(42,36,32,0.4);transform:translateY(-2px)}
 .qr-lightbox-box{background:#fff;border:none;box-shadow:0 8px 60px rgba(46,43,39,0.2);padding:2.5rem 2.25rem;max-width:340px;width:100%;text-align:center;position:relative}
@@ -487,7 +487,7 @@ footer em{color:var(--sage-deep)}
     <li><button onclick="showPage('travel')" id="nav-travel" data-i18n="nav.travel">Cómo llegar</button></li>
     <li><button onclick="showPage('todo')" id="nav-todo" data-i18n="nav.todo">Qué hacer</button></li>
     <li><button onclick="showPage('story')" id="nav-story" data-i18n="nav.story">Nuestra historia</button></li>
-    <li><button onclick="showPage('gifts')" id="nav-gifts" data-i18n="nav.gifts">Lista de Regalos</button></li>
+    <li><button onclick="showPage('gifts')" id="nav-gifts" data-i18n="nav.gifts">Sugerencias de regalo</button></li>
     <li><button onclick="showPage('faq')" id="nav-faq" data-i18n="nav.faq">Preguntas</button></li>
     <li><button onclick="promptPassword()" id="nav-dashboard" style="display:none">● Dashboard</button></li>
   </ul>
@@ -847,7 +847,7 @@ footer em{color:var(--sage-deep)}
         </div>
         <div class="gift-ticket-row">
           <div>
-            <span style="font-family:var(--display);font-size:26px;color:var(--dark)" data-i18n="reg.qr.title">BCP</span>
+            <span style="font-family:var(--display);font-size:26px;color:var(--dark)" data-i18n="reg.qr.title">Banco De Crédito (BCP)</span>
             <span style="font-family:var(--sans);font-size:15.5px;color:var(--muted);display:block;margin-top:3px"><span data-i18n="reg.account.label">Número de cuenta:</span> 201-52334139-3-48</span>
           </div>
           <button class="reg-link" style="flex-shrink:0;margin-left:1.5rem" onclick="copyText('201-52334139-3-48',this)" data-i18n="reg.copy">Copiar</button>
@@ -930,12 +930,12 @@ let dashboardUnlocked=false;
 
 const i18n={
 es:{
-  'nav.home':'Inicio','nav.schedule':'Programa','nav.travel':'Viaje','nav.todo':'Qué hacer','nav.story':'Nuestra historia','nav.gifts':'Lista de Regalos','nav.faq':'Preguntas',
+  'nav.home':'Inicio','nav.schedule':'Programa','nav.travel':'Viaje','nav.todo':'Qué hacer','nav.story':'Nuestra historia','nav.gifts':'Sugerencias de regalo','nav.faq':'Preguntas',
   'home.eyebrow':'19 de Diciembre de 2026','home.together':'Juntos con sus familias','home.personal':'¡Estamos muy felices de compartir este momento tan especial con ustedes!','home.location':'La Paz, Bolivia','home.upload':'Haz clic para añadir la invitación',
   'home.reg.eyebrow':'Sugerencias de regalo','home.reg.title':'Sugerencias de regalo','home.reg.intro':'Su presencia en nuestra boda es nuestro mejor regalo, pero si desean darnos un regalo adicional les facilitamos los siguientes medios.',
   'reg.honey.title':'Fondo de luna de miel','reg.honey.desc':'Contribuye a nuestra primera aventura como esposos','reg.honey.link':'Contribuir →',
   'reg.zelle.desc':'Envía un regalo directamente vía Zelle','reg.zelle.info':'dbohrta@gmail.com','reg.account.label':'Número de cuenta:',
-  'reg.qr.title':'BCP','reg.qr.desc':'Transferencia directa a nuestra cuenta en Bolivia','reg.qr.info':'[Número de cuenta · Banco]',
+  'reg.qr.title':'Banco De Crédito (BCP)','reg.qr.desc':'Transferencia directa a nuestra cuenta en Bolivia','reg.qr.info':'[Número de cuenta · Banco]',
   'reg.copy':'Copiar','reg.copied':'¡Copiado!','reg.qr.tap':'Haz click en cualquier código QR para ampliarlo y/o descargarlo','qr.download':'Descargar',
   'sched.eyebrow':'Sábado, 19 de Diciembre de 2026','sched.program.title':'Programación',
   'sched.1.title':'Ceremonia religiosa','sched.2.title':'Cóctel de recepción','sched.3.title':'Cena de recepción',
